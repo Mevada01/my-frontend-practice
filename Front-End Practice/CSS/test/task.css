@@ -73,7 +73,7 @@
     font-size: 24px;
     line-height: 40px;
     font-weight: bold;
-}
+}   
 
 .col-1 {
     width: 100%;
@@ -92,8 +92,8 @@
 .i-1 a i {
     text-align: center;
     background-color: red;
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     padding: 50px;
     border-radius: 50%;
     color: white;

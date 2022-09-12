@@ -4,10 +4,13 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
+    /* border: 1px solid; */
 }
-button{
+
+button {
     cursor: pointer;
 }
+
 .container {
     /* font-family: 'Courier New', Courier, monospace; */
     width: 90%;
@@ -20,7 +23,8 @@ button{
     display: flex;
     /* flex-wrap: wrap; */
 }
-.icon{
+
+.icon {
     line-height: 90px;
     /* vertical-align: middle/; */
 }
@@ -29,7 +33,8 @@ button{
     display: inline-block;
     padding: 10px;
 }
-.logo{
+
+.logo {
     vertical-align: middle;
 }
 
@@ -194,10 +199,12 @@ button{
 .col-lg-50 {
     width: 50%;
 }
-    .col-lg-50 img{
-        width: 90%;
-        /* height: 780px; */
-    }
+
+.col-lg-50 img {
+    width: 100%;
+    /* height: 780px; */
+}
+
 .text-50 {
     margin-top: 40px;
     /* float: right; */
@@ -216,7 +223,7 @@ button{
 }
 
 .text-50 p {
-    margin-top: 90px;
+    margin-top: 40px;
     padding-top: 40px;
     margin-left: 70px;
     width: 507px;
@@ -228,12 +235,14 @@ button{
 }
 
 .btn-2 {
-    margin-top: 90px;
-    margin-left: 90px;
-    padding-left: 40px;
+    margin-top: 50px;
+    margin-left: 80px;
+    padding-left: 86px;
 }
+
+
 .btn-2 button {
-    width: 300px;
+     width: 300px;
     height: 55px;
     border-radius: 37px;
     background-color: #e2a355;
@@ -246,7 +255,7 @@ button{
     font-family: "Open Sans";
 }
 
-.row3{
+.row3 {
     background-color: #deb37e;
     display: flex;
 }
