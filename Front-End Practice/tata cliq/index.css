@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+title {
+    display: none;
+}
+
+.container {
+    /* font-family: 'Courier New', Courier, monospace; */
+    width: 90%;
+    margin: 0 auto;
+    color: black;
+}
+
+.row {
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+.text ul li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.text ul li a {
+    color: rgb(34, 33, 33);
+    text-transform: uppercase;
+}
+
+.icon {
+    width: 183px;
+    height: 51px;
+    border-radius: 25px;
+    background-color: #7f7770;
+}
+.search {
+    /* width: 200px; */
+    /* padding-left: 50px; */
+    float: left;
+    margin: 80px;
+}
+
+.search input {
+    padding: 8px 150px 8px 40px;
+}
+
+/* body{
+    background-color: lavender;
+} */
+.tbl {
+    margin-top: 50px;
+    padding-right: 20px;
+}
+
+.search-field__input {
+    display: block;
+    appearance: none;
+    width: 50%;
+    padding: 0.5rem;
+    padding-inline-start: 3.25rem;
+    padding-inline-end: 3.375rem;
+    /* margin: 0 auto; */
+    font-size: 1rem;
+    font-family: monospace;
+    line-height: 1.5;
+    background-color: rgb(244, 244, 244);
+    border-radius: 60px;
+    outline: 0;
+    box-shadow: none;
+    transition: background-color .2s;
+
+}
+.col-50 {
+    width: 100%;
+}
+
+.bg-color {
+    color: black;
+}
+
+.bg-img img {
+    width: 100%;
+    /* background-image: url("img/bg1.png"); */
+}
+
+.sec {
+    position: relative;
+}
+
+.text2 {
+    position: absolute;
+    top: 0;
+}
+
+.text2 h2 {
+    width: 35%;
+    margin-top: 12.5rem;
+    /*  font-size:3rem ;
+    font-family:'Courier New', Courier, monospace ;
+    color: #deb37e; */
+    font-size: 72px;
+    color: #deb37e;
+    font-weight: 800;
+    font-family: "Open Sans";
+    filter: drop-shadow(2.575px -4.286px 2.5px rgba(84, 82, 79, 0.22));
+}
+
+.text2 h3 {
+    padding: .5rem;
+    font-style: oblique;
+    letter-spacing: 5px;
+}
+
+.text2 p {
+    width: 30%;
+    /*padding-top: 1rem;
+    color: rgb(128, 127, 127);
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 19px; */
+    /* width: 452px; */
+    padding-top: 15px;
+    /* height: 130px; */
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: #54524f;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Open Sans";
+}
+
+.text2 button {
+    color: darkgoldenrod;
+    border-radius: 20px;
+    border: none;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+    padding: .5rem 1.6rem;
+}

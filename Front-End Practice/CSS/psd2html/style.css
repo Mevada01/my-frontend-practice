@@ -1,0 +1,252 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+button{
+    cursor: pointer;
+}
+.container {
+    /* font-family: 'Courier New', Courier, monospace; */
+    width: 90%;
+    margin: 0 auto;
+}
+
+.row {
+    /* align-items: center; */
+    justify-content: space-between;
+    display: flex;
+    /* flex-wrap: wrap; */
+}
+.icon{
+    line-height: 90px;
+    /* vertical-align: middle/; */
+}
+
+.text ul li {
+    display: inline-block;
+    padding: 10px;
+}
+.logo{
+    vertical-align: middle;
+}
+
+.text ul li a {
+    line-height: 70px;
+    color: rgb(34, 33, 33);
+    text-transform: uppercase;
+}
+
+.text ul li:hover {
+    background-color: #f79947;
+}
+
+.col-50 {
+    width: 50%;
+}
+
+.bg-img img {
+    width: 100%;
+    /* filter: drop-shadow(2.575px -4.286px 2.5px rgba(232, 230, 229, 0.75)); */
+    /* background-image: url("img/bg1.png"); */
+}
+
+.sec {
+    position: relative;
+}
+
+.text2 {
+    position: absolute;
+    top: 0;
+}
+
+.text2 h2 {
+    width: 35%;
+    margin-top: 12.5rem;
+    /*  font-size:3rem ;
+    font-family:'Courier New', Courier, monospace ;
+    color: #deb37e; */
+    font-size: 72px;
+    color: #deb37e;
+    font-weight: 800;
+    font-family: "Open Sans";
+    filter: drop-shadow(2.575px -4.286px 2.5px rgba(84, 82, 79, 0.22));
+}
+
+.text2 h3 {
+    padding: .5rem;
+    font-style: oblique;
+    letter-spacing: 5px;
+}
+
+.text2 p {
+    width: 30%;
+    /*padding-top: 1rem;
+    color: rgb(128, 127, 127);
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 19px; */
+    /* width: 452px; */
+    padding-top: 15px;
+    /* height: 130px; */
+    font-size: 21px;
+    letter-spacing: 1px;
+    color: #54524f;
+    font-weight: 400;
+    font-style: italic;
+    font-family: "Open Sans";
+}
+
+.text2 button {
+    color: darkgoldenrod;
+    border-radius: 20px;
+    border: none;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+    padding: .5rem 1.6rem;
+}
+
+.let {
+    width: 90%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.let h2 {
+    text-align: center;
+    font-size: 63px;
+    text-transform: uppercase;
+    color: #e2a355;
+    font-weight: bold;
+    font-family: "Open Sans";
+}
+
+.let p {
+    width: 100%;
+    height: 210px;
+    font-size: 27px;
+    color: #7f7770;
+    font-weight: 400;
+    font-family: "Open Sans";
+    text-align: center;
+}
+
+.col-30 {
+    display: flex;
+    width: 30%;
+    margin: 0 auto;
+}
+
+.bdr {
+    width: 339px;
+    height: 200px;
+    background-color: #7f7770;
+}
+
+.bdr h2 {
+    font-size: 29px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Open Sans";
+    padding: 20px 10px;
+}
+
+.bdr p {
+    font-size: 23px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Open Sans";
+    padding: 40px 10px;
+}
+
+.col-30 img {
+    display: block;
+    margin: 0 auto;
+}
+
+.btn {
+    margin: 20px auto;
+
+}
+
+.btn button {
+    color: darkgoldenrod;
+    border-radius: 20px;
+    border: none;
+    border-color: blanchedalmond;
+    background-color: blanchedalmond;
+    padding: .5rem 1.6rem;
+    /* margin: 0 auto; */
+    /* margin-left: 600px; */
+}
+
+
+.row2 {
+    width: 100%;
+    /* height: 780px; */
+    background-color: #7f7770;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-lg-50 {
+    width: 50%;
+}
+    .col-lg-50 img{
+        width: 90%;
+        /* height: 780px; */
+    }
+.text-50 {
+    margin-top: 40px;
+    /* float: right; */
+    /* width: 50%; */
+}
+
+.text-50 h3 {
+    width: 490px;
+    margin-top: 90px;
+    padding-top: 40px;
+    margin-left: 70px;
+    font-size: 58px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "";
+}
+
+.text-50 p {
+    margin-top: 90px;
+    padding-top: 40px;
+    margin-left: 70px;
+    width: 507px;
+    height: 175px;
+    font-size: 29px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+.btn-2 {
+    margin-top: 90px;
+    margin-left: 90px;
+    padding-left: 40px;
+}
+.btn-2 button {
+    width: 300px;
+    height: 55px;
+    border-radius: 37px;
+    background-color: #e2a355;
+    font-size: 20px;
+    letter-spacing: 6px;
+    line-height: 21px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: "Open Sans";
+}
+
+.row3{
+    background-color: #deb37e;
+    display: flex;
+}

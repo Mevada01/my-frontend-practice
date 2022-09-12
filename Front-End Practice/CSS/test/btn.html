@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="btn.css">
+</head>
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <div class="wrapper">
+        <input type="checkbox" id="check" class="toggle">
+        <label for="check" class="label">
+            <img src="https://iili.io/S04awl.png" alt="" class="sun"> 
+            <i class="fa-solid fa-moon fa-2x"></i>
+            <div class="circle"></div>
+        </label>
+    </div>
+    <script>
+        const body = document.querySelector('body');
+const check = document.querySelector('input');
+
+check.addEventListener("change", function(){
+  if(check.checked){
+    body.style.backgroundColor = "black";
+  } else{
+    body.style.backgroundColor = "wheat";
+  }
+})
+    </script>
+</body>
+</html>

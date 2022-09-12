@@ -1,0 +1,54 @@
+#hitesh {
+    color: #ff0000;
+    font-family: serif;
+    font-size: 60px;
+    font-style: italic;
+    /* background-color: aqua; */
+}
+
+#harsh {
+    color: #00bbff;
+    background-color: rgb(0, 0, 0);
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.span {
+    background-color: aqua;
+    font-size: 30px;
+    font-family: monospace;
+}
+
+.h1{
+    font-size: 30px;
+    font-family: monospace;
+    color: lightpink;
+    background-color: darkcyan;
+}
+ul.a a,
+ul#d a {
+    text-decoration: none;
+}
+
+ul#d a {
+    color: red;
+}
+
+html {
+    background-color: lavenderblush;
+}
+
+body {
+    width: 650px;
+    margin: 0 auto;
+    background-color: lavenderblush;
+    padding: 0 20px 20px 20px;
+    border: 2px solid black;
+}
+footer{
+    background-color: papayawhip;
+}
+
+/* h1{
+    text-shadow: 3px 3px 50px black;
+  } */

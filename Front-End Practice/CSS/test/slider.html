@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Slider</title>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    }
+
+    button {
+    padding: 8px;
+    }
+
+    .container {
+    width: 500px;
+    margin: 20px auto;
+    }
+
+    #slider {
+    position: relative;
+    height: 400px;
+    margin-bottom: 20px;
+    }
+
+    #slider img {
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    transition: all .5s;
+    }
+
+    .buttons {
+    display: flex;
+    justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div id="slider"></div>
+
+    <div class="buttons">
+      <button id="prevButton"><</button>
+      <button id="nextButton">></button>
+    </div>
+  </div>
+  
+  <script>
+        const sliderImages = [
+    "./decoore.png",
+    "./Brownline Minimalist Interior Design Logo.png",
+    "./images/image3.jpg",
+    "./images/image4.jpg",
+];
+const sliderDom = document.getElementById("slider");
+
+let currentImage = 0;
+
+function renderImages() {
+    sliderImages.forEach((image) => {
+        sliderDom.innerHTML += "<img src='" + image + "' />";
+    });
+}
+
+function clearImages() {
+    const images = document.getElementsByTagName("img");
+    for (let i = 0; i < images.length; i++) {
+        images[i].style.opacity = 0;
+    }
+}
+
+function showImage(image) {
+    clearImages();
+    document.getElementsByTagName("img")[image].style.opacity = 1;
+}
+
+function init() {
+    renderImages();
+    showImage(currentImage);
+}
+
+init();
+
+let myBtn = document.querySelector("#prevButton");
+
+myBtn.onclick = function() {
+    const newImage = (currentImage + 1) % sliderImages.length;
+
+    showImage(newImage);
+}
+let myBtn2 = document.querySelector("#nextButton");
+
+myBtn2.onclick = function() {
+    const newImage = (currentImage + 1) % sliderImages.length;
+    showImage(newImage);
+
+
+}
+  </script>
+</body>
+</html>

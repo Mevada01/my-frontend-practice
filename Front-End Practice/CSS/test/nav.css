@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+body {
+    display: grid;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    background-color: #ecf0f1;
+}
+
+ul {
+    list-style: none;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+    background-color: #fafbfb;
+}
+
+.navbar {
+    
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-nav {
+    display: flex;
+    margin: auto;
+    gap: 10px;
+}
+
+.nav-item {
+    padding: 10px;
+    transition: all 0.3s ease-in-out;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    transform: scaleX(0);
+}
+
+.main-nav:hover~.indicator {
+    transform: scaleX(1);
+}
+
+.active {
+    position: relative;
+    --bc: #264653;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 10%;
+    width: 80%;
+    height: 4px;
+    background-color: var(--bc);
+    animation: fade 300ms ease-in-out forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/*  
+By Mostafa Alvandi
+https://codepen.io/alvandisetvat/pen/gOeQjPR
+*/

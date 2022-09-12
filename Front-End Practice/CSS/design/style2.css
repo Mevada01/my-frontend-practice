@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    color: lavender;
+}
+
+html,
+body {
+    background-color: black;
+}
+
+.src:hover {
+    transform: scale(1.3);
+    color: rgb(19, 110, 175);
+}
+
+.src {
+    margin: 0px;
+    /* padding-left: 60px ; */
+    padding-right: 0 px;
+    text-decoration: none;
+    width: 150px;
+    color: lavender;
+    transition: all 1.5s ease;
+}
+
+/* .srt {
+    color: black;
+    padding: 0 20px 0 0 ;
+    text-decoration:none;
+    width: 150px;
+} */
+.cont span {
+    /* padding-top: 70px; */
+    font-size: 30px;
+    color: lavenderblush;
+}
+
+.cont span:hover {
+    color: rgb(19, 110, 175);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.cont h3{
+    padding-top: 20px;
+    color: lavenderblush;
+}
+.cont h3:hover {
+    color: rgb(19, 110, 175);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.e {
+    font-size: 22px;
+    font-family: monospace;
+    width: 600px;
+}
+
+.cont {
+    width: 700px;
+    margin: 30px 0 0 60px;
+    font-size: 15px;
+}
+
+p {
+    padding-top: 18px;
+    color: lavenderblush;
+}
+
+p:hover {
+    color: rgb(19, 110, 175);
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+
+.box {
+    padding: 20px;
+}
+
+.box h2 {
+    padding-left: 80px;
+    color: lavenderblush;
+}
+
+.img-box {
+    display: flex;
+    /* justify-content:space-between; */
+    margin: 0 80px;
+    gap: 50px;
+    padding-top: 20px;
+}
+
+.select {
+    padding: 50px;
+    display: flex;
+}
+
+.utf {
+    margin-left: 14px;
+}
+
+.utf select {
+    color: rgb(0, 0, 0);
+    /* display: block; */
+    appearance: none;
+    padding: 0.5rem;
+    padding-inline-start: 1.50rem;
+    margin: 0 auto;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: rgb(244, 244, 244);
+    border-radius: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    /* outline: 0;  */
+    /* box-shadow: none; */
+    /* transition: background-color .2s; */
+}
+
+option {
+    font-family: monospace;
+    color: rgb(90, 89, 89);
+}
+hr{
+    color: rgb(0,0,0);
+}
+/* .items{
+    position: absolute;
+} */
+.chair {
+    padding: 50px;
+    display: flex;
+    margin-left: 14px;
+}
+
+.chair .chair1 {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/matchspel-gaming-chair-bomstad-black__0985645_pe816716_s5.avif") no-repeat;
+}
+
+.chair .chair1:hover {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/matchspel-gaming-chair-bomstad-black__0997853_pe822829_s5.avif") no-repeat;
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.chair .chair2 {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/lanespelare-accessories-stand__0974868_pe812565_s5.avif") no-repeat;
+}
+
+.chair .chair2:hover {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/lanespelare-accessories-stand__1083065_pe858960_s5.avif") no-repeat;
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+
+.chair .chair3 {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/tb1.avif") no-repeat;
+}
+
+.chair .chair3:hover {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/tb2.avif") no-repeat;
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.chair .chair4 {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/utespelare-gaming-chair-bomstad-grey__0985643_pe816715_s5.avif") no-repeat;
+}
+
+.chair4:hover {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/utespelare-gaming-chair-bomstad-grey__0997779_pe822756_s5.avif") no-repeat;
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.price{
+    padding: 15px;
+    display: flex;
+    margin-left: 110px;   
+}
+.price h3{
+    /* margin:0 195px 0 0px ; */
+    color: lavenderblush;
+    font-size: 19px;
+    line-height: 1.571;
+    width: 400px;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+.price h3:hover {
+    color: rgb(19, 110, 175);
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.price h4{
+    color: lavenderblush;
+    width: 400px;
+    /* margin: 0 194px 0 0; */
+}
+.price h4:hover {
+    color: rgb(19, 110, 175);
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.asr {
+    padding: 50px;
+    padding-top: 10px;
+    display: flex;
+    margin-left: 14px;
+}
+.asr .chair5 {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/lanespelare-ring-light-with-phone-holder__0971505_pe811368_s5.avif") no-repeat;
+}
+
+.asr .chair5:hover {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/lanespelare-ring-light-with-phone-holder__0971506_pe811367_s5.avif") no-repeat;
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.asr .chair6 {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/uppspel-pegboard-combination-black__0985178_pe816537_s5.png") no-repeat;
+}
+
+.asr .chair6:hover {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/uppspel-pegboard-combination-black__0985138_pe816517_s5.png") no-repeat;
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+
+.asr .chair7 {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/lanespelare-neck-pillow__0984936_pe816456_s5.png") no-repeat;
+}
+
+.asr .chair7:hover {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/lanespelare-neck-pillow__1000503_pe824289_s5.png") no-repeat;
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}
+.asr .chair8 {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/fredde-gaming-desk-black__0736008_pe740351_s5.png") no-repeat;
+}
+
+.asr .chair8:hover {
+    height: 400px;
+    width: 400px;
+    background: url("img/gamin-furniture/fredde-gaming-desk-black__0403524_pe565583_s5.png") no-repeat;
+    transform: scaleY(1.2);
+    transform: scale(1.1);
+    transition: 1.5s ease;
+}

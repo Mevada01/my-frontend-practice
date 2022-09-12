@@ -1,0 +1,29 @@
+ul{
+    /* color: wheat; */
+    margin: 0 auto;
+    margin-left: 900px;
+}
+li{
+    border: 1px;
+    background-color: rgb(25, 78, 60);
+    display: inline-block;
+    padding: 10px;
+    /* margin-left: 100px; */
+    /* margin-bottom: 400px; */
+    margin: 0 ;
+    
+}
+div{
+    background-color: wheat;
+    height: 100px;
+}
+a{
+    text-decoration: none;
+    color: wheat;
+    /* text-align: left; */
+}
+h1{
+    height: 1px;
+    width: 100px;
+    
+}

@@ -1,0 +1,14 @@
+.col{
+    display: inline-block;
+}
+.col img{
+    width: 100px;
+    padding: 15px;
+}
+.box{
+    width: 100%;
+}
+.col2{
+    display: inline-block;
+    margin-left: 50px;
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="nav.css">
+    <!-- <link rel="stylesheet" href="nav.js"> -->
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <ul class="main-nav">
+                <li class="nav-item active">Home</li>
+                <li class="nav-item">Blog</li>
+                <li class="nav-item">Gallery</li>
+                <li class="nav-item">About Us</li>
+                <li class="nav-item">Contact Us</li>
+            </ul>
+            <div class="indicator"></div>
+        </nav>
+    </header>
+    <script>
+        const items = document.querySelectorAll(".nav-item");
+        const ind = document.querySelector(".indicator");
+        const colorPallette = [
+            { background: "#264653", foreground: "#ffffff" },
+            { background: "#f4a261", foreground: "#000000" },
+            { background: "#2a9d8f", foreground: "#ffffff" },
+            { background: "#e9c46a", foreground: "#000000" },
+            { background: "#e76f51", foreground: "#ffffff" }
+        ];
+
+        function handleIndicator(el) {
+            ind.style.backgroundColor = el.dataset.bcolor;
+            el.style.color = el.dataset.fcolor;
+            ind.style.width = el.offsetWidth + "px";
+            ind.style.left = el.offsetLeft + "px";
+        }
+
+        items.forEach((item, index) => {
+            item.dataset.bcolor = colorPallette[index].background;
+            item.dataset.fcolor = colorPallette[index].foreground;
+            item.addEventListener("mousemove", (e) => {
+                handleIndicator(e.target);
+            });
+            item.addEventListener("click", (e) => {
+                items.forEach((item) => item.classList.remove("active"));
+                e.target.classList.add("active");
+                document
+                    .querySelector(".active")
+                    .style.setProperty("--bc", e.target.dataset.bcolor);
+            });
+            item.addEventListener("mouseleave", (e) => {
+                e.target.style.color = "#000000";
+            });
+        });
+
+//By Mostafa Alvandi
+//https://codepen.io/alvandisetvat/pen/gOeQjPR
+
+    </script>
+</body>
+
+</html>

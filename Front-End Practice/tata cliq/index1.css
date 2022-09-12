@@ -1,0 +1,796 @@
+/* *{
+    margin-left: 10px ;
+    margin-right: 10px
+} */
+.DesktopHeader__base {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    background: #000000;
+    transition: 200ms;
+    transform: translate3d(0, 0, 0);
+}
+
+.DesktopHeader__dummyColorHeader {
+    width: 30%;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #000000;
+    z-index: 0;
+}
+
+.DesktopHeader__headerHolder {
+    width: 100%;
+    height: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding-left: 185px;
+    position: relative;
+    z-index: 1;
+}
+
+.DesktopHeader__logoHolder {
+    width: 115px;
+    height: 85px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: url("img/tatacliq-logo.png") no-repeat;
+    background-size: auto 60px;
+    background-position: center;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+.DesktopHeader__headerFunctionality {
+    width: 100%;
+    height: auto;
+    float: left;
+}
+
+.DesktopHeader__upperHeader {
+    width: 100%;
+    height: 40px;
+    float: left;
+    background: #3d3d3d;
+    padding: 0px 0px 0px 20px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.DesktopHeader__luxeryTab {
+    width: auto;
+    height: 100%;
+    float: left;
+    line-height: 40px;
+    color: #fff;
+    font-size: 12px;
+    font-family: semibold;
+    cursor: pointer;
+}
+
+
+.DesktopHeader__loginAndTrackTab {
+    width: auto;
+    height: 100%;
+    float: right;
+}
+
+.DesktopHeader__signInAndLogout {
+    width: auto;
+    height: 100%;
+    position: relative;
+    float: right;
+}
+
+.DesktopHeader__logOutDropDown {
+    width: 178px;
+    height: auto;
+    background: #fff;
+    right: 0;
+    top: 33px;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    z-index: 1;
+    transition: 300ms;
+    box-shadow: 0 6px 6px 0 rgb(156 156 156 / 24%), 0 0 6px 0 rgb(0 0 0 / 12%);
+}
+
+.DesktopHeader__loginTab {
+    width: auto;
+    height: 100%;
+    float: right;
+    line-height: 40px;
+    color: #fff;
+    font-size: 12px;
+    font-family: semibold;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.DesktopHeader__loginTab {
+    width: auto;
+    height: 100%;
+    float: right;
+    line-height: 40px;
+    color: #fff;
+    font-size: 12px;
+    font-family: semibold;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.DesktopHeader__lowerHeader {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.DesktopHeader__leftTabHolder {
+    width: 262px;
+    height: 100%;
+}
+
+.DesktopHeader__categoryAndBrand {
+    width: auto;
+    height: auto;
+    color: #fff;
+    padding-right: 30px;
+    line-height: 60px;
+    margin-right: 25px;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    font-family: semibold;
+    display: flex;
+    position: relative;
+    padding-left: 15px;
+}
+
+.DesktopHeader__arrow {
+    background-size: auto 12px;
+    background-position: right center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+    background: url("img/downarrorw.png");
+    background-size: auto 13px;
+    transition: 300ms;
+    background-position: center;
+    transform: rotate(0);
+}
+
+.DesktopHeader__categoryAndBrand {
+    width: auto;
+    height: auto;
+    color: #fff;
+    padding-right: 30px;
+    line-height: 60px;
+    margin-right: 25px;
+    cursor: pointer;
+    float: left;
+    font-size: 14px;
+    font-family: semibold;
+    display: flex;
+    position: relative;
+    padding-left: 15px;
+}
+
+.DesktopHeader__arrow {
+    background-size: auto 12px;
+    background-position: right center;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    bottom: 0;
+    margin: auto;
+    background: url(https://www.tatacliq.com/src/general/components/img/down-arrow-white.svg) no-repeat;
+    background-size: auto 13px;
+    transition: 300ms;
+    background-position: center;
+    transform: rotate(0);
+}
+
+.DesktopHeader__searchHolder {
+    width: calc(100% - 353px);
+    height: 100%;
+    padding-right: 15px;
+}
+
+.DesktopHeader__searchWrapper {
+    width: 100%;
+    height: 100%;
+}
+
+.SearchPage__base {
+    width: 100%;
+    height: auto;
+    background-color: #ececec;
+    padding-top: 50px;
+    position: relative;
+}
+
+.SearchPage__searchBar {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.SearchHeader__base {
+    width: 100%;
+    height: 50px;
+    background-color: #212121;
+}
+
+.SearchHeader__InformationHeader {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    padding: 10px 40px;
+}
+
+.SearchHeader__prominentSearchRedHolder {
+    width: 28px;
+    margin: auto;
+    left: initial;
+    padding-left: 12px;
+    cursor: pointer;
+}
+
+.Icon__base {
+    position: relative;
+}
+
+.Icon__image {
+    background: url(https://www.tatacliq.com/src/search/components/img/search-inactive.svg) no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.SearchHeader__searchWithInputRedHolder {
+    width: calc(100% - 36px);
+    height: auto;
+}
+
+.SearchHeader__input {
+    width: auto;
+    height: auto;
+}
+
+.SearchHeader__scrollingTextWrapper:first-child {
+    padding-top: 11px;
+}
+
+.SearchHeader__scrollingTextWrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+}
+
+.Input2__whiteHollow {
+    color: #fff;
+}
+
+.Input2__container {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+element.style {
+    height: 40px;
+    border-top-color: rgb(33, 33, 33);
+    border-right-color: rgb(33, 33, 33);
+    border-bottom: none;
+    border-left-color: rgb(33, 33, 33);
+    border-top-style: none;
+    border-right-style: none;
+    border-left-style: none;
+}
+
+.Input2__box {
+    border: 1px;
+    border-color: #d2d2d2;
+    /* border-style: solid; */
+}
+
+.Input2__base {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-radius: 2px;
+}
+
+.DesktopHeader__rightTabHolder {
+    width: 91px;
+    height: 100%;
+    padding: 15px 0px;
+}
+
+.DesktopHeader__myBagShow {
+    width: auto;
+    height: 24px;
+    position: relative;
+    color: #fff;
+    font-size: 14px;
+    font-family: semibold;
+    line-height: 33px;
+    background: url(https://www.tatacliq.com/src/general/components/img/WL4.svg) no-repeat;
+    background-size: auto 28px;
+    background-position: left center;
+    padding-left: 30px;
+    float: right;
+    margin-left: 25px;
+    cursor: pointer;
+    transition: 300ms;
+    transform: scale(1);
+}
+
+.DesktopHeader__mywishList {
+    width: 24px;
+    height: 24px;
+    background: url(https://www.tatacliq.com/src/general/components/img/orderhistorywhite.svg) no-repeat;
+    background-size: 24px;
+    /* background-position: 10px 8px; */
+    cursor: pointer;
+    /* float: right; */
+    transition: 300ms;
+    transform: scale(1);
+    position: relative;
+    padding: 0px 26px 0px 10px;
+}
+
+.search {
+    /* width: 200px; */
+    /* padding-left: 50px; */
+    float: left;
+    /* margin: 80px; */
+}
+
+.search input {
+    padding: 8px 150px 8px 40px;
+}
+
+/* body{
+    background-color: lavender;
+} */
+.tbl {
+    margin-top: 50px;
+    padding-right: 20px;
+}
+
+.search-field__input {
+    display: block;
+    appearance: none;
+    width: 94%;
+    padding: 0.5rem;
+    padding-inline-start: 3.25rem;
+    padding-inline-end: 3.375rem;
+    margin: -34px 10px;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.5;
+    background-color: #212121;
+    border-radius: 60px;
+    border: none;
+    outline: 0;
+    box-shadow: none;
+    transition: background-color .2s;
+    color: rgb(202, 195, 195);
+}
+
+
+.slider-container {
+    /* background-color: rgba(177, 103, 6, 0.384); */
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    top: 0;
+}
+
+.slider {
+    width: 100%;
+    /* max-width: 600px; */
+    /* height: 400px; */
+    /* margin: 20px; */
+    /* text-align: center; */
+    /* border-radius: 20px; */
+    /* position: relative; */
+
+}
+
+.slides {
+    display: flex;
+    /* overflow-x: scroll; */
+    overflow: hidden;
+    position: relative;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    width: 100%;
+}
+
+.slide:nth-of-type(even) {
+    background-color: rgb(250, 246, 212);
+}
+
+.slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 100%;
+    height: 400px;
+    margin-right: 0px;
+    box-sizing: border-box;
+    background: white;
+    transform-origin: center center;
+    transform: scale(1);
+    scroll-snap-align: center;
+}
+
+.slide__text img {
+    /* font-size: 40px; */
+    /* font-weight: bold; */
+    /* font-family: sans-serif; */
+    width: 100%;
+
+}
+
+.slide a {
+    position: absolute;
+    top: 48%;
+    width: 35px;
+    height: 35px;
+    border: solid black;
+    border-width: 0 4px 4px 0;
+    padding: 3px;
+    box-sizing: border-box;
+}
+
+a.slide__prev {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    left: 5%;
+}
+
+a.slide__next {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    right: 5%;
+}
+
+.slider {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    border-radius: 20px;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+/* @media screen and (min-width: 1025px) */
+.ConnectWidget__holder {
+    margin: 60px auto 0px;
+    padding: 0px 10px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ConnectWidget__holder {
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+}
+
+.CommonCenter__base {
+    width: 100%;
+    /* height: auto; */
+    text-align: center;
+}
+
+/* @media only screen and (min-width: 1440px) */
+.CommonCenter__center {
+    max-width: 1200px;
+}
+
+.CommonCenter__center {
+    width: 100%;
+    height: auto;
+    display: inline-block;
+    max-width: 1024px;
+    text-align: left;
+}
+
+.ConnectBaseWidget__base {
+    position: relative;
+    transition: 300ms;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.ConnectBaseWidget__base {
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ImageFlexible__base {
+    width: 100%;
+    height: auto;
+}
+
+element.style {
+    height: auto;
+    max-width: 100%;
+    display: block;
+}
+
+.ImageFlexible__loaded {
+    display: block;
+    margin: auto;
+}
+
+.ImageFlexible__actual {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.ConnectBaseWidget__content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.ConnectBaseWidget__dataHolder {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 40px;
+    display: flex;
+    flex-direction: row;
+}
+
+.ConnectBaseWidget__textAndDescription {
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-right: 90px;
+}
+
+.ConnectBaseWidget__header {
+    margin-bottom: 15px;
+    padding: 0px;
+}
+
+.ConnectBaseWidget__header {
+    width: 100%;
+    height: auto;
+    font-family: regular;
+    float: left;
+    padding: 10px;
+    margin-bottom: 80px;
+}
+
+.ConnectBaseWidget__iconBase {
+    margin-bottom: 50px;
+}
+
+.ConnectBaseWidget__iconBase {
+    width: 100%;
+    height: 60px;
+    position: relative;
+    float: left;
+}
+
+.ConnectBaseWidget__descriptionHolder {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    font-size: 15px;
+    font-family: regular;
+    line-height: normal;
+    display: flex;
+}
+
+.col {
+    display: inline-block;
+
+}
+
+.col img {
+    width: 100px;
+    padding: 15px;
+}
+
+.box1 {
+    /* width: 100%; */
+    margin-left: 100px;
+    margin-top: 100px;
+}
+
+.col2 {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.button {
+    align-items: center;
+    background-color: hsl(12, 82%, 87%);
+    color: black;
+    border: none;
+    text-align: center;
+    padding: 10px 150px;
+    margin: 40px 535px;
+    font-size: 110%;
+    height: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    /* font-style: oblique; */
+}
+
+.rounded-corners {
+    border-radius: 60px;
+}
+
+p {
+    text-align: center;
+    padding: 10px 150px;
+    margin: 20px 400px;
+    font-size: 110%;
+    /* font-style: oblique; */
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    line-height: 1.5;
+    font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
