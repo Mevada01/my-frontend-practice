@@ -4,7 +4,15 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    border: 1px solid;
+    /* border: 1px solid; */
+}
+@font-face {
+    font-family:Open Sans;
+    src: url("fonts/OpenSans-Bold.ttf");
+}
+@font-face{
+    font-family: Rock salt;
+    src: url("fonts/RockSalt.ttf");
 }
 
 button {
@@ -139,7 +147,7 @@ button {
 }
 
 .col-30 {
-    display: flex;
+    /* display: flex;    */
     width: 30%;
     margin: 0 auto;
 }
@@ -219,7 +227,7 @@ button {
     font-size: 58px;
     color: #ffffff;
     font-weight: 700;
-    font-family: "";
+    font-family: "Open Sans";
 }
 
 .text-50 p {
@@ -259,18 +267,21 @@ button {
     background-color: #deb37e;
     display: flex;
 }
-.bg{
+
+.bg {
     height: 584px;
     margin: 0 auto;
     background-color: #7f7770;
 }
+
 .row4 {
     text-align: center;
     text-transform: uppercase;
     margin-top: 9rem;
     /* width: 50%; */
 }
-.txtl{
+
+.txtl {
     /* margin-top: 50px; */
     margin: 0 auto;
     width: 90%;
@@ -285,10 +296,61 @@ button {
 }
 
 .row4 p {
-    margin-top:40px ;
+    margin-top: 40px;
     font-size: 29px;
     color: #dbdbdb;
     font-weight: 400;
     font-family: "Open Sans";
     text-align: center;
+}
+.img-mount img{
+    width: 100%;
+    position: relative;
+}
+.text5{
+    position: absolute;
+    top: 0;
+    /* margin-left: 19rem; */
+    right: 145px;
+    margin-top: 26.5rem;
+}
+.text5 h4 {
+    font-size: 65px;
+    color: #deb37e;
+    font-weight: 800;
+    font-style: italic;
+    font-family: "Open Sans";
+    text-align: right;
+    filter: drop-shadow(2.575px -4.286px 2.5px rgba(84, 82, 79, 0.36));
+}
+
+.text5 h5 {
+    font-size: 65px;
+    color:#54524f;
+    font-weight: 800;
+    font-style: italic;
+    font-family: "Open Sans";
+    text-align: right;
+    filter: drop-shadow(2.575px -4.286px 2.5px rgba(84, 82, 79, 0.36));
+}
+
+.sec-7{
+    margin: 0 auto;
+    width: 339px;
+    height: 248px;
+    text-align: center;
+    background-color: transparent;
+}
+
+.sec-7 h2{
+    color: #e2a355;
+}
+.sec-7 p{
+    color: #54524f;
+    /* text-align: left; */
+}
+.bdr{
+    text-align: center;
+    /* width: 80%; */
+    margin: 0 auto;
 }
