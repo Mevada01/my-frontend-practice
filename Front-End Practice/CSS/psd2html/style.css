@@ -4,7 +4,7 @@
     text-decoration: none;
     list-style: none;
     box-sizing: border-box;
-    /* border: 1px solid; */
+    border: 1px solid;
 }
 
 button {
@@ -242,7 +242,7 @@ button {
 
 
 .btn-2 button {
-     width: 300px;
+    width: 300px;
     height: 55px;
     border-radius: 37px;
     background-color: #e2a355;
@@ -258,4 +258,37 @@ button {
 .row3 {
     background-color: #deb37e;
     display: flex;
+}
+.bg{
+    height: 584px;
+    margin: 0 auto;
+    background-color: #7f7770;
+}
+.row4 {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 9rem;
+    /* width: 50%; */
+}
+.txtl{
+    /* margin-top: 50px; */
+    margin: 0 auto;
+    width: 90%;
+}
+
+.row4 h2 {
+    margin-top: 40px;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: 600;
+    font-family: "Open Sans";
+}
+
+.row4 p {
+    margin-top:40px ;
+    font-size: 29px;
+    color: #dbdbdb;
+    font-weight: 400;
+    font-family: "Open Sans";
+    text-align: center;
 }
