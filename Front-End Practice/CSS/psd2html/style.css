@@ -354,3 +354,11 @@ button {
     /* width: 80%; */
     margin: 0 auto;
 }
+
+.col{
+    margin-top: 11.5rem;
+    /* text-align: center; */
+}
+.col p{
+    text-align: center;
+}
