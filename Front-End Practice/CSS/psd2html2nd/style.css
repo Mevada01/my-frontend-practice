@@ -1,26 +1,32 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
 }
-header{
-    background-color:  #2F2F2F;
+
+header {
+    background-color: #2F2F2F;
 }
-.pos-rel{
+
+.pos-rel {
     position: relative;
 }
-.pos-ab{
+
+.pos-ab {
     position: absolute;
 }
-.bg-img{
+
+.bg-img {
     width: 100%;
 }
-.des-img{
+
+.des-img {
     top: -92px;
     right: 82px;
 }
-.des-img img{
+
+.des-img img {
     width: 100%;
 }
