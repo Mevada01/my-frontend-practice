@@ -30,3 +30,40 @@ header {
 .des-img img {
     width: 100%;
 }
+
+nav {
+    top: 30px;
+    left: 39px;
+}
+
+nav ul {
+    float: right;
+    /* margin-right: 20px; */
+    padding: 20px 0;
+    margin-left: 344px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-break: 80px;
+    margin: 0 5px;
+}
+
+nav ul li a {
+    letter-spacing: 2px;
+    color: aliceblue;
+    font-size: 17px;
+    padding: 7px 28px;
+    text-transform: uppercase;
+}
+
+a.active {
+    background: darkblue;
+    transition: .5s;
+}
+
+a:hover {
+    background: wheat;
+    transition: .5s;
+    color: black;
+}
