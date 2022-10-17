@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    .div1{
+        width: 100px;
+        height: 100px;
+        background: lightcoral;
+        animation: rahul;
+        position: absolute;
+        animation-duration: 2s;
+        animation-iteration-count: 2;
+        
+    }
+    .div img{
+        margin: 0 auto;
+    }
+    @keyframes rahul{
+        /* from{background: lightcoral;}
+        to{background: blue;
+        } */
+        0%{
+            background-color: brown;
+        }
+        10%{
+            background-color: orange;
+        }
+        20%{
+            background-color: orangered;
+        }
+        30%{
+            background-color: yellow;
+        }
+        40%{
+            background-color: rebeccapurple;
+        }
+        50%{
+            background-color:firebrick ;
+        }
+        60%{
+            background-color: green;
+        }
+        70%{
+            border-radius: 50%;
+            background-color: white;
+        }
+        100%{
+            background-color: blueviolet;
+        }
+    }
+    .div2{
+        width: 100px;
+        height: 100px;
+        background: blue;
+        animation-name:rahul1;
+        animation-duration: 2s;
+        position: relative;
+        border-radius: 50%;
+        animation-iteration-count: infinite;
+        /* margin: auto; */
+    }
+    .div2 img{
+        /* margin: auto; */
+
+    }
+    @keyframes rahul1{
+        0%{background: blue; left: 0; top: 10px;}
+        10%{background: red; left: 200px; top: 0; box-sizing: 50%; transform: rotate(180deg);}
+        20%{background: green; left: 0px; top: 20px; }
+        30%{background: hotpink; left: 0px; top: 200px; }
+        40%{background:red; left: 10px; top: 400px; border-radius: 50%;}
+        50%{background:rgb(255, 196, 0); left: 300px; top: 400px; border-radius: 50%;}
+        60%{background:gold; left: 300px; top: 300px; border-radius: 50%;}
+        70%{background:gold; left: 300px; top: 200px; border-radius: 50%;}
+        80%{background:gold; left: 300px; top: 100px; border-radius: 50%;}
+        90%{background:gold; left: 300px; top:0 ; border-radius: 50%;}
+
+        100%{background: grey; left: 0; top: 0;}
+    }
+</style>
+<body>
+    <div class="div1">
+
+    </div>
+    <div class="div2">
+        <!-- <img src="../psd4/psd to html/img/sec-9Facebook.png" alt=""> -->
+    </div>
+    <script src="je.js"></script>
+</body>
+</html>
