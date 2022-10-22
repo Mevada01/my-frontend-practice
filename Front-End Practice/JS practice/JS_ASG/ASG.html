@@ -8,7 +8,7 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>JavaScript</title>
     <link rel="shortcut icon" href="./images/jslogo.png" type="image/x-icon">
@@ -21,8 +21,8 @@
             border-collapse: collapse;
         }
 
-        body{
-            background-image: linear-gradient(360deg, #90c5bf,#33875c,transparent);
+        body {
+            background-image: linear-gradient(360deg, #90c5bf, #33875c, transparent);
         }
 
         .row {
@@ -33,21 +33,6 @@
         .row img {
             width: 500px;
         }
-
-        th,
-        td {
-            border: 1px solid gray;
-        }
-
-        tbody tr td {
-            text-align: center;
-        }
-
-        thead,
-        tbody {
-            background-color: beige;
-        }
-
         span {
             color: orange;
             font-weight: 500;
@@ -73,361 +58,9 @@
     <div class="container">
         <ol>
             <h4>
-                <li>What are the <span> New Tags</span> added in HTML5?</li>
-            </h4>
-            <p><strong>Answere:</strong>
-            <table class="table table-warning table-hover table-striped">
-                <thead>
-                    <tr>
-                        <th class="text-center bg-dark text-light">Tag</th>
-                        <th class="text-center bg-dark text-light">Description</th>
-                    <tr>
-                        <th class="text-center bg-info" colspan="2">Semantic Tags</th>
-                    </tr>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>&lt;article&gt;</td>
-                        <td>It defines the independent or self-contained content of a webpage.</td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;aside&gt;</td>
-                        <td>It defines the content which provide information about the main content.</td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;bdi&gt;</td>
-                        <td>It is used to isolate the part of text which might be formatted in another direction.</td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;details&gt;</td>
-                        <td>It defines additional information which only visible as per user demand.</td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;dialog&gt;</td>
-                        <td>It represents a dialog box or other interactive components.</td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;figcaption&gt;</td>
-                        <td>It defines caption for the element.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;figure&gt;</td>
-                        <td>It defines a self-contained content, and referenced as a single unit.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;footer&gt;</td>
-                        <td>It represents the footer section of the webpage.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;header&gt;</td>
-                        <td>It defines the introductory or navigational content of the webpage.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;main&gt;</td>
-                        <td>It specifies the main content of the HTML document.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;mark&gt;</td>
-                        <td>It represent the text which is highlighted or marked for reference or notation purposes.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;meter&gt;</td>
-                        <td>It represents a scalar value within a known range.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;nav&gt;</td>
-                        <td>It represents the section which contains navigation links.
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>&lt;progress&gt;</td>
-                        <td>It defines a progress bar which shows completions progress of a task.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;rp&gt;</td>
-                        <td>It defines alternative content for the browser which do not support ruby annotations.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;rt&gt;</td>
-                        <td>It defines explanations and pronunciations of characters in ruby annotations.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;ruby&gt;</td>
-                        <td>It defines ruby annotations (Specifically for Asian language).
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;section&gt;</td>
-                        <td>It defines a generic section within an HTML document.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;summary&gt;</td>
-                        <td>It defines summary or caption for a &lt;details&gt; element which can be clicked to change
-                            the
-                            state of &lt;details&gt; element.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;time&gt;</td>
-                        <td>It defines data/time within an HTML document.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;wbr&gt;</td>
-                        <td>It specifies a line break opportunity. (Where line break possible)
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <th class="text-center bg-info" colspan="2">HTML5 Form Tags</th>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;audio&gt;</td>
-                        <td>It defines sound content.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;embed&gt;</td>
-                        <td>It defines a container for external files/application/media.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;source&gt;</td>
-                        <td>It defines multiple media resources for the media elements.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;track&gt;</td>
-                        <td>It defines text tracks for <audio> and &lt;video&gt; files
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;video&gt;</td>
-                        <td>It defines video content within HTML document.
-                        </td>
-                    </tr>
-
-
-                    <tr>
-                        <th class="text-center bg-info" colspan="2">HTML5 New types &lt;input&gt;</th>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;color&gt;</td>
-                        <td>It represents an input field which defines a color selector.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;date&gt;</td>
-                        <td>It represents an input field to define a date selector.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;datetime&gt;</td>
-                        <td>It defines full date and time display with time zone information.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;datetime-local&gt;</td>
-                        <td>It defines date and time without time zone information.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;email&gt;</td>
-                        <td>It defines an input field with email pattern Validation.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;month&gt;</td>
-                        <td>It defines the input field to enter month for the particular year
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;number&gt;</td>
-                        <td>It defines field which selects a numeric value only.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;range&gt;</td>
-                        <td>It defines a numeric value selector with a given range of 1 to 100.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;search&gt;</td>
-                        <td>It is used to define a search field.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;tel&gt;</td>
-                        <td>It represents a control to enter a telephone number.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;time&gt;</td>
-                        <td>It represents a control to enter time value with no time zone.
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;url&gt;</td>
-                        <td>It represents an input field to enter a URL
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>&lt;week&gt;</td>
-                        <td>It defines a selector for week value for the particular year.
-                        </td>
-                    </tr>
-
-
-                </tbody>
-            </table>
-            </p>
-
-            <h4>
-                <li>How to embed <span>audio</span> and <span>video</span> in a webpage? </li>
-            </h4>
-
-            <p><strong>Answere:</strong>
-                To embed audio in HTML, we use the <mark> &lt;audio&gt;</mark> tag. Before HTML5, audio cannot be added
-                to web pages in the Internet Explorer era. To play audio, we used web plugins like Flash. After the
-                release of HTML5, it is possible. This tag supports Chrome, Firefox, Safari, Opera, and Edge in three
-                audio formats – MP3, WAV, OGG. Only Safari browser doesn’t support OGG audio format.
-            <p><strong>Syntax: Audio & Video</strong></p>
-            <div class="row">
-                <img src="./images/Screenshot 2022-09-09 124019.jpg" alt="">
-                <img src="./images/video.jpg" alt="">
-            </div>
-            </p>
-
-            <h4>
-                <li>Semantic element in HTML5?</li>
-            </h4>
-            <strong>Answere:</strong>
-            <p>
-                List of new semantic elements:-
-            <ol>
-                <li>&lt;article&gt;</li>
-                <li>&lt;aside&gt;</li>
-                <li>&lt;details&gt;</li>
-                <li>&lt;figcaption&gt;</li>
-                <li>&lt;figure&gt;</li>
-                <li>&lt;footer&gt;</li>
-                <li>&lt;header&gt;</li>
-                <li>&lt;main&gt;</li>
-                <li>&lt;mark&gt;</li>
-                <li>&lt;nav&gt;</li>
-                <li>&lt;section&gt;</li>
-                <li>&lt;summary&gt;</li>
-                <li>&lt;time&gt;</li>
-            </ol>
-            </p>
-
-            <h4>
-                <li><span>Canvas</span> and <span>SVG</span> tags.</li>
-            </h4>
-            <strong>Answere:</strong>
-            <p>Differences between SVG and Canvas :-
-            <ul>
-                <li>The HTML5 introduced the two new graphical elements &lt;canvas&gt; and &lt;svg&gt; for creating rich
-                    graphics on the web, but they are fundamentally different.</li>
-            </ul>
-
-            <table class="table text-center table-striped">
-                <thead>
-                    <tr>
-                        <th>SVG</th>
-                        <th>Canvas</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Vector based (composed of shapes) </td>
-                        <td>Raster based (composed of pixel)
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Multiple graphical elements, which become the part of the page's DOM tree</td>
-                        <td>Single element similar to &lt;img&gt;in behavior. Canvas diagram can be saved to PNG or JPG
-                            format
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td>Modified through script and CSS</td>
-                        <td>Modified through script only</td>
-                    </tr>
-                    <tr>
-                        <td>Good text rendering capabilities</td>
-                        <td>Poor text rendering capabilities</td>
-                    </tr>
-
-                    <tr>
-                        <td>Give better performance with smaller number of objects or larger surface, or both</td>
-                        <td>Give better performance with larger number of objects or smaller surface, or both</td>
-                    </tr>
-                    <tr>
-                        <td>Better scalability. Can be printed with high quality at any resolution. Pixelation does not
-                            occur</td>
-                        <td>Poor scalability. Not suitable for printing on higher resolution. Pixelation may occur</td>
-                    </tr>
-                </tbody>
-            </table>
-            </p>
-
-            <h4>
                 <li>What is <span>JavaScript</span> ?</li>
             </h4>
-            <strong>Answere:</strong>
+            <strong>Answer:</strong>
             <p>JavaScript is a dynamic computer programming language. It is lightweight and most commonly used as a part
                 of web pages, whose implementations allow client-side script to interact with the user and make dynamic
                 pages. It is an interpreted programming language with object-oriented capabilities.</p>
@@ -447,7 +80,7 @@
             <h4>
                 <li>What is the use of isNaN function? </li>
             </h4>
-            <strong>Answere:</strong>
+            <strong>Answer:</strong>
             <p>NaN stands for Not a Number. It’s a special floating point value that is used to indicate that a result
                 is
                 undefined or unrepresentable. I personally see it as the result returned in embedded systems when a
@@ -462,7 +95,7 @@
             <h4>
                 <li>What is negative Infinity?</li>
             </h4>
-            <strong>Answere:</strong>
+            <strong>Answer:</strong>
             <p>Negative infinity is the smallest number.</p>
             <p>On the number-line, the right of zero are positive numbers starting from 1 and left of zero are negative
                 numbers starting from -1. If somebody ask me how far can you go right on the number line, I would say
@@ -472,7 +105,7 @@
             <h4>
                 <li>Which company developed JavaScript?</li>
             </h4>
-            <strong>Answere:-</strong>
+            <strong>Answer:-</strong>
             <p>The first JavaScript engine was created by <i> <b>Brendan Eich</b></i> at <u><b>Netscape Communications
                         Corporation</b></u>, for the
                 <u> <b>Netscape</b> </u> Navigator Web browser.
@@ -481,7 +114,7 @@
             <h4>
                 <li>What are undeclared and undefined variables?</li>
             </h4>
-            <strong>Answere:</strong>
+            <strong>Answer:</strong>
             <ol>
                 <li>
 
@@ -497,14 +130,14 @@
             <h4>
                 <li>Write the code for adding new elements dynamically?</li>
             </h4>
-            <strong>Answere:</strong>
+            <strong>Answer:</strong>
             <p><a href="js-text.txt"><img src="./images/add-js.jpg" alt=""></a></p>
 
             <div>
                 <h4>
                     <li>What is the difference between ViewState and SessionState?</li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <ol>
                     <li>
                         <p><strong>ViewState</strong>: It is maintained at only one level that is page-level. Changes
@@ -547,7 +180,7 @@
                 <h4>
                     <li> What is === operator?</li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>The strict equality operator (===) checks whether its two operands are equal, returning a Boolean
                     result. Unlike the equality operator, the strict equality operator always considers operands of
                     different types to be different.</p>
@@ -557,7 +190,7 @@
                 <h4>
                     <li>How can the style/class of an element be changed</li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>To change the styles of all elements with a specific class:
                 <ol>
                     <li>Use the querySelectorAll() method to get a collection of the elements with the specific class.
@@ -588,7 +221,7 @@
                 <h4>
                     <li>How to read and write a file using JavaScript? </li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <ol>
                     <li><strong>Syntax: </strong><mark>writeFile(path,inputData,callBackFunction)</mark> </li>
                     <p><b>Write operation on a file:</b></p>
@@ -641,7 +274,7 @@
                 <h4>
                     <li>What are all the looping structures in JavaScript?</li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>Following are looping structures in Javascript:</p>
                 <ol>
                     <li>for loop</li>
@@ -654,7 +287,7 @@
                 <h4>
                     <li>How can you convert the string of any base to an integer in JavaScript? </li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>In JavaScript parseInt() function (or a method) is used to convert the passed in string parameter or
                     value to an integer value itself. This function returns an integer of base which is specified in
                     second argument of parseInt() function.
@@ -669,7 +302,7 @@
                 <h4>
                     <li>What is the function of the delete operator?</li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>Delete operator:</p>
                 <div class="row">
                     <img class="img" src="./images/delete.js-function.html.jpg" alt="">
@@ -681,7 +314,7 @@
                 <h4>
                     <li>What are all the types of Pop up boxes available in JavaScript?</li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>JavaScript has three kind of popup boxes:</p>
                 <ol>
                     <li>Alert box</li>
@@ -694,7 +327,7 @@
                 <h4>
                     <li>What is the use of Void (0)? </li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>Usually, when the user clicks a link on a page a new page loads, but this is not always the desired
                     course of action. For example, when the user clicks a link on a page, you might want to update the
                     value of a field in a form or the value of a variable. To prevent a page from reloading when a link
@@ -714,7 +347,7 @@
                 <h4>
                     <li>How can a page be forced to load another page in JavaScript? </li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>In this article, we will see how can a page be forced to load another page in JavaScript.
                 </p>
                 <P><b>Approach:</b> We can use window.location property inside the script tag to forcefully load another
@@ -746,7 +379,7 @@
                 <h4>
                     <li>What are the disadvantages of using innerHTML in JavaScript?</li>
                 </h4>
-                <strong>Answere:</strong>
+                <strong>Answer:</strong>
                 <p>The use of <b>innerHTML</b> very slow: The process of using innerHTML is much slower as its contents
                     as slowly built, also already parsed contents and elements are also re-parsed which takes time.</p>
                 <p>Preserves event handlers attached to any DOM elements: The event handlers do not get attached to the
