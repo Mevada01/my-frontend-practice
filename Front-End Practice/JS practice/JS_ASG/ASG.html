@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>JavaScript</title>
+    <link rel="shortcut icon" href="./images/jslogo.png" type="image/x-icon">
+
+
+    <style>
+        table {
+            /* width: 50%; */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            border-collapse: collapse;
+        }
+
+        body{
+            background-image: linear-gradient(360deg, #90c5bf,#33875c,transparent);
+        }
+
+        .row {
+            display: flex;
+            margin: 0 10px;
+        }
+
+        .row img {
+            width: 500px;
+        }
+
+        th,
+        td {
+            border: 1px solid gray;
+        }
+
+        tbody tr td {
+            text-align: center;
+        }
+
+        thead,
+        tbody {
+            background-color: beige;
+        }
+
+        span {
+            color: orange;
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        a img {
+            width: 80%;
+        }
+
+        .img {
+            width: 500px;
+        }
+
+        div {
+            margin: 50px 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <ol>
+            <h4>
+                <li>What are the <span> New Tags</span> added in HTML5?</li>
+            </h4>
+            <p><strong>Answere:</strong>
+            <table class="table table-warning table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th class="text-center bg-dark text-light">Tag</th>
+                        <th class="text-center bg-dark text-light">Description</th>
+                    <tr>
+                        <th class="text-center bg-info" colspan="2">Semantic Tags</th>
+                    </tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>&lt;article&gt;</td>
+                        <td>It defines the independent or self-contained content of a webpage.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;aside&gt;</td>
+                        <td>It defines the content which provide information about the main content.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;bdi&gt;</td>
+                        <td>It is used to isolate the part of text which might be formatted in another direction.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;details&gt;</td>
+                        <td>It defines additional information which only visible as per user demand.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;dialog&gt;</td>
+                        <td>It represents a dialog box or other interactive components.</td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;figcaption&gt;</td>
+                        <td>It defines caption for the element.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;figure&gt;</td>
+                        <td>It defines a self-contained content, and referenced as a single unit.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;footer&gt;</td>
+                        <td>It represents the footer section of the webpage.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;header&gt;</td>
+                        <td>It defines the introductory or navigational content of the webpage.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;main&gt;</td>
+                        <td>It specifies the main content of the HTML document.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;mark&gt;</td>
+                        <td>It represent the text which is highlighted or marked for reference or notation purposes.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;meter&gt;</td>
+                        <td>It represents a scalar value within a known range.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;nav&gt;</td>
+                        <td>It represents the section which contains navigation links.
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td>&lt;progress&gt;</td>
+                        <td>It defines a progress bar which shows completions progress of a task.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;rp&gt;</td>
+                        <td>It defines alternative content for the browser which do not support ruby annotations.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;rt&gt;</td>
+                        <td>It defines explanations and pronunciations of characters in ruby annotations.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;ruby&gt;</td>
+                        <td>It defines ruby annotations (Specifically for Asian language).
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;section&gt;</td>
+                        <td>It defines a generic section within an HTML document.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;summary&gt;</td>
+                        <td>It defines summary or caption for a &lt;details&gt; element which can be clicked to change
+                            the
+                            state of &lt;details&gt; element.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;time&gt;</td>
+                        <td>It defines data/time within an HTML document.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;wbr&gt;</td>
+                        <td>It specifies a line break opportunity. (Where line break possible)
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="text-center bg-info" colspan="2">HTML5 Form Tags</th>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;audio&gt;</td>
+                        <td>It defines sound content.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;embed&gt;</td>
+                        <td>It defines a container for external files/application/media.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;source&gt;</td>
+                        <td>It defines multiple media resources for the media elements.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;track&gt;</td>
+                        <td>It defines text tracks for <audio> and &lt;video&gt; files
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;video&gt;</td>
+                        <td>It defines video content within HTML document.
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <th class="text-center bg-info" colspan="2">HTML5 New types &lt;input&gt;</th>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;color&gt;</td>
+                        <td>It represents an input field which defines a color selector.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;date&gt;</td>
+                        <td>It represents an input field to define a date selector.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;datetime&gt;</td>
+                        <td>It defines full date and time display with time zone information.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;datetime-local&gt;</td>
+                        <td>It defines date and time without time zone information.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;email&gt;</td>
+                        <td>It defines an input field with email pattern Validation.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;month&gt;</td>
+                        <td>It defines the input field to enter month for the particular year
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;number&gt;</td>
+                        <td>It defines field which selects a numeric value only.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;range&gt;</td>
+                        <td>It defines a numeric value selector with a given range of 1 to 100.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;search&gt;</td>
+                        <td>It is used to define a search field.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;tel&gt;</td>
+                        <td>It represents a control to enter a telephone number.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;time&gt;</td>
+                        <td>It represents a control to enter time value with no time zone.
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;url&gt;</td>
+                        <td>It represents an input field to enter a URL
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>&lt;week&gt;</td>
+                        <td>It defines a selector for week value for the particular year.
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+            </p>
+
+            <h4>
+                <li>How to embed <span>audio</span> and <span>video</span> in a webpage? </li>
+            </h4>
+
+            <p><strong>Answere:</strong>
+                To embed audio in HTML, we use the <mark> &lt;audio&gt;</mark> tag. Before HTML5, audio cannot be added
+                to web pages in the Internet Explorer era. To play audio, we used web plugins like Flash. After the
+                release of HTML5, it is possible. This tag supports Chrome, Firefox, Safari, Opera, and Edge in three
+                audio formats – MP3, WAV, OGG. Only Safari browser doesn’t support OGG audio format.
+            <p><strong>Syntax: Audio & Video</strong></p>
+            <div class="row">
+                <img src="./images/Screenshot 2022-09-09 124019.jpg" alt="">
+                <img src="./images/video.jpg" alt="">
+            </div>
+            </p>
+
+            <h4>
+                <li>Semantic element in HTML5?</li>
+            </h4>
+            <strong>Answere:</strong>
+            <p>
+                List of new semantic elements:-
+            <ol>
+                <li>&lt;article&gt;</li>
+                <li>&lt;aside&gt;</li>
+                <li>&lt;details&gt;</li>
+                <li>&lt;figcaption&gt;</li>
+                <li>&lt;figure&gt;</li>
+                <li>&lt;footer&gt;</li>
+                <li>&lt;header&gt;</li>
+                <li>&lt;main&gt;</li>
+                <li>&lt;mark&gt;</li>
+                <li>&lt;nav&gt;</li>
+                <li>&lt;section&gt;</li>
+                <li>&lt;summary&gt;</li>
+                <li>&lt;time&gt;</li>
+            </ol>
+            </p>
+
+            <h4>
+                <li><span>Canvas</span> and <span>SVG</span> tags.</li>
+            </h4>
+            <strong>Answere:</strong>
+            <p>Differences between SVG and Canvas :-
+            <ul>
+                <li>The HTML5 introduced the two new graphical elements &lt;canvas&gt; and &lt;svg&gt; for creating rich
+                    graphics on the web, but they are fundamentally different.</li>
+            </ul>
+
+            <table class="table text-center table-striped">
+                <thead>
+                    <tr>
+                        <th>SVG</th>
+                        <th>Canvas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Vector based (composed of shapes) </td>
+                        <td>Raster based (composed of pixel)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Multiple graphical elements, which become the part of the page's DOM tree</td>
+                        <td>Single element similar to &lt;img&gt;in behavior. Canvas diagram can be saved to PNG or JPG
+                            format
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Modified through script and CSS</td>
+                        <td>Modified through script only</td>
+                    </tr>
+                    <tr>
+                        <td>Good text rendering capabilities</td>
+                        <td>Poor text rendering capabilities</td>
+                    </tr>
+
+                    <tr>
+                        <td>Give better performance with smaller number of objects or larger surface, or both</td>
+                        <td>Give better performance with larger number of objects or smaller surface, or both</td>
+                    </tr>
+                    <tr>
+                        <td>Better scalability. Can be printed with high quality at any resolution. Pixelation does not
+                            occur</td>
+                        <td>Poor scalability. Not suitable for printing on higher resolution. Pixelation may occur</td>
+                    </tr>
+                </tbody>
+            </table>
+            </p>
+
+            <h4>
+                <li>What is <span>JavaScript</span> ?</li>
+            </h4>
+            <strong>Answere:</strong>
+            <p>JavaScript is a dynamic computer programming language. It is lightweight and most commonly used as a part
+                of web pages, whose implementations allow client-side script to interact with the user and make dynamic
+                pages. It is an interpreted programming language with object-oriented capabilities.</p>
+            <p>JavaScript was first known as LiveScript, but Netscape changed its name to JavaScript, possibly because
+                of the excitement being generated by Java. JavaScript made its first appearance in Netscape 2.0 in 1995
+                with the name LiveScript. The general-purpose core of the language has been embedded in Netscape,
+                Internet Explorer, and other web browsers.</p>
+            <p>The ECMA-262 Specification defined a standard version of the core JavaScript language.</p>
+            <ul>
+                <li>JavaScript is a lightweight, interpreted programming language.</li>
+                <li>Designed for creating network-centric applications.</li>
+                <li>Complementary to and integrated with Java.</li>
+                <li>Complementary to and integrated with HTML.</li>
+                <li>Open and cross-platform</li>
+            </ul>
+
+            <h4>
+                <li>What is the use of isNaN function? </li>
+            </h4>
+            <strong>Answere:</strong>
+            <p>NaN stands for Not a Number. It’s a special floating point value that is used to indicate that a result
+                is
+                undefined or unrepresentable. I personally see it as the result returned in embedded systems when a
+                sensor is
+                disconnected.</p>
+            <p>NaN is not less than, greater than, equal to or not equal to any numeric value. It’s also not equal to
+                itself.
+                That means that you can’t test whether a variable contains NaN simply by testing whether it is equal to
+                NaN. It
+                can’t ever be. Thus, we have the isnan macro to allow us to write the code to test for it.</p>
+
+            <h4>
+                <li>What is negative Infinity?</li>
+            </h4>
+            <strong>Answere:</strong>
+            <p>Negative infinity is the smallest number.</p>
+            <p>On the number-line, the right of zero are positive numbers starting from 1 and left of zero are negative
+                numbers starting from -1. If somebody ask me how far can you go right on the number line, I would say
+                infinity. And if somebody ask me how far can you go left on the number-line, I would say negative
+                infinity.</p>
+
+            <h4>
+                <li>Which company developed JavaScript?</li>
+            </h4>
+            <strong>Answere:-</strong>
+            <p>The first JavaScript engine was created by <i> <b>Brendan Eich</b></i> at <u><b>Netscape Communications
+                        Corporation</b></u>, for the
+                <u> <b>Netscape</b> </u> Navigator Web browser.
+            </p>
+
+            <h4>
+                <li>What are undeclared and undefined variables?</li>
+            </h4>
+            <strong>Answere:</strong>
+            <ol>
+                <li>
+
+                    <p><strong>Undeclared </strong> variables is a variable that has been declared without ‘var’
+                        keyword. demoVar = ‘hello world’.</p>
+                </li>
+                <li>
+                    <p><strong>Undefined </strong>is a variable that has been declared but no value exists and is a type
+                        of itself ‘undefined’.</p>
+                </li>
+            </ol>
+
+            <h4>
+                <li>Write the code for adding new elements dynamically?</li>
+            </h4>
+            <strong>Answere:</strong>
+            <p><a href="js-text.txt"><img src="./images/add-js.jpg" alt=""></a></p>
+
+            <div>
+                <h4>
+                    <li>What is the difference between ViewState and SessionState?</li>
+                </h4>
+                <strong>Answere:</strong>
+                <ol>
+                    <li>
+                        <p><strong>ViewState</strong>: It is maintained at only one level that is page-level. Changes
+                            made on a single page is not visible on other pages. Information that is gathered in view
+                            state is stored for the clients only and cannot be transferred to any other place. View
+                            state is synonymous with serializable data only.</p>
+                    </li>
+                    <ul>
+                        <li>
+                            <p>ViewState has a tendency for the persistence of page-instance-specific data. When view
+                                state is used, the values posted of a particular page persist in the browse area that
+                                the client is using and post back only when the entire operation is done. The data of
+                                the previous page is no longer available when another page is loaded. Also, Data is not
+                                secure in this case because it is exposed to clients. Encryption can be used for data
+                                security.</p>
+                        </li>
+                    </ul>
+                    <li>
+                        <p><strong>SessionState:</strong> It is maintained at session-level and data can be accessed
+                            across all
+                            pages in the web application. The information is stored within the server and can be
+                            accessed by any
+                            person that has access to the server where the information is stored.</p>
+                    </li>
+                    <ul>
+                        <li>
+                            <p>SessionState has the tendency for the persistence of user-specific data and is maintained
+                                on the
+                                server-side. This data remains available until the time that the session is completed or
+                                the browser
+                                is closed by the user. The session state is only valid for type objects.</p>
+                        </li>
+                    </ul>
+                </ol>
+
+
+            </div>
+
+            <div>
+                <h4>
+                    <li> What is === operator?</li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>The strict equality operator (===) checks whether its two operands are equal, returning a Boolean
+                    result. Unlike the equality operator, the strict equality operator always considers operands of
+                    different types to be different.</p>
+            </div>
+
+            <div>
+                <h4>
+                    <li>How can the style/class of an element be changed</li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>To change the styles of all elements with a specific class:
+                <ol>
+                    <li>Use the querySelectorAll() method to get a collection of the elements with the specific class.
+                    </li>
+                    <li>Use the forEach() method to iterate over the collection.</li>
+                    <li>On each iteration, use the style object to change the element's styles.</li>
+                </ol>
+                <p>
+                <ol>
+                    <li>var elem = document.getElementById('demo');</li>
+                    <li>elem.style.color = 'red';</li>
+                    <p>And to change class you have to use classList object</p>
+                    <p>
+                    <ul>
+                        <li>var elem = document.getElementById('demo');</li>
+                        <li>// Remove 'fi' class from it</li>
+                        <li>elem.classList.remove('fi');</li>
+                        <li>// add 'mi' class to it</li>
+                        <li>elem.classList.add('mi')</li>
+                    </ul>
+                    <p>This is how you can change style and class of an element from javascript.</p>
+                </ol>
+                </p>
+                </p>
+            </div>
+
+            <div>
+                <h4>
+                    <li>How to read and write a file using JavaScript? </li>
+                </h4>
+                <strong>Answere:</strong>
+                <ol>
+                    <li><strong>Syntax: </strong><mark>writeFile(path,inputData,callBackFunction)</mark> </li>
+                    <p><b>Write operation on a file:</b></p>
+                    <p>After the File System file is imported then,the writeFile() operation is called. The writeFile()
+                        method is used to write into the file in JavaScript. The syntax of this method is as follows−
+                    </p>
+
+                    <p>
+                    <ul>
+                        <li><strong>Path</strong> − The first parameter is the path of the file or the name of the file
+                            into
+                            which the input data is to be written.</li>
+                        <ul>
+                            <li>If there is a file already, then the contents in the file are deleted and the input
+                                which is
+                                given by the user will get updated or if the file is not present, then the file with
+                                that
+                                will be created in the given path and the input information is written into it.</li>
+                        </ul>
+                        <li><strong>inputData</strong> − The second parameter is the input data which contains the data
+                            to
+                            be written in the file that is opened.
+
+                        </li>
+                        <li><strong>callBackFuntion</strong> − The third parameter is the function which is the call
+                            back
+                            function which takes the error as the parameter and shows the fault if the write operation
+                            fails.
+
+                        </li>
+                    </ul>
+                    </p>
+                    <li><strong>Syntax: </strong> <mark>readFile(path, format, callBackFunc)</mark></li>
+                    <p>Reading from the file</p>
+                    <p>After the File System module is imported, the reading of the file in JavaScript can be done by
+                        using the readFile() function.</p>
+                    <ul>
+                        <li>Path − The first parameter is the path of the test file from which the contents are to read.
+                            If the current location or directory is the same directory where the file which is to be
+                            opened and read is located then, only the file name has to be given.</li>
+                        <li>Format − The second parameter is the optional parameter which is the format of the text
+                            file. The format can be ASCII, utf-8 etc.</li>
+                        <li>CallBackFunc − The third parameter is the call back function which takes the error as the
+                            parameter and displays the fault is any raised due to the error.</li>
+                    </ul>
+                </ol>
+            </div>
+
+            <div>
+                <h4>
+                    <li>What are all the looping structures in JavaScript?</li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>Following are looping structures in Javascript:</p>
+                <ol>
+                    <li>for loop</li>
+                    <li>while loop</li>
+                    <li>do-while loop</li>
+                </ol>
+            </div>
+
+            <div>
+                <h4>
+                    <li>How can you convert the string of any base to an integer in JavaScript? </li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>In JavaScript parseInt() function (or a method) is used to convert the passed in string parameter or
+                    value to an integer value itself. This function returns an integer of base which is specified in
+                    second argument of parseInt() function.
+
+                    parseInt() function returns Nan( not a number) when the string doesn’t contain number.</p>
+                <b>Syntax</b> <mark>parseInt(Value, radix)</mark>
+                <p>It accepts string as a value and converts it to specified radix system (any desired numerical value
+                    passed by a user) and returns an integer (corresponding to the passed in numerical radix value).</p>
+            </div>
+
+            <div>
+                <h4>
+                    <li>What is the function of the delete operator?</li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>Delete operator:</p>
+                <div class="row">
+                    <img class="img" src="./images/delete.js-function.html.jpg" alt="">
+                    <img src="./images/output.jpg" alt="">
+                </div>
+            </div>
+
+            <div>
+                <h4>
+                    <li>What are all the types of Pop up boxes available in JavaScript?</li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>JavaScript has three kind of popup boxes:</p>
+                <ol>
+                    <li>Alert box</li>
+                    <li>Confirm box</li>
+                    <li>Prompt box</li>
+                </ol>
+            </div>
+
+            <div>
+                <h4>
+                    <li>What is the use of Void (0)? </li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>Usually, when the user clicks a link on a page a new page loads, but this is not always the desired
+                    course of action. For example, when the user clicks a link on a page, you might want to update the
+                    value of a field in a form or the value of a variable. To prevent a page from reloading when a link
+                    is clicked, the void(0) function is used.</p>
+                <b>Example:</b>
+                <p>
+                    &lt;a href=" " onclick=" alert ( ' You have clicked the button ' ) > Click here ! &lt;/a&gt; </p>
+                <p>Click on the above link. Even though the code within it specifies to display a message in an alert
+                    box (and this action does take place), the page will reload automatically.</p>
+                <p>We can fix this with void(0): </p>
+                <p> &lt;a href = " javascript : void ( 0 ) ; " onclick = " alert ( ' You have clicked the button ' )&gt;
+                    Click here ! &lt;/a&gt;
+                </p>
+            </div>
+
+            <div>
+                <h4>
+                    <li>How can a page be forced to load another page in JavaScript? </li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>In this article, we will see how can a page be forced to load another page in JavaScript.
+                </p>
+                <P><b>Approach:</b> We can use window.location property inside the script tag to forcefully load another
+                    page in
+                    Javascript. It is a reference to a Location object that is it represents the current location of the
+                    document.
+                    We can change the URL of a window by accessing it.</P>
+                <p>Syntax:</p>
+                <p>
+                    &lt;script> <br>
+                    window .location = &lt;Path / URL> <br>
+                    &lt;/script>
+                </p>
+                <p>Example:</p>
+                <p>
+                    &lt;script> <br>
+                    window .location = "https://www.google.com/" <br>
+                    &lt;/script>
+                </p>
+                <p>So in the above example, we see that by changing the window.location Object inside Javascript we can
+                    change the
+                    URL of our window and thus successfully load any page forcibly from our Javascript without any href
+                    tag. We will
+                    build a small working sample to learn it practically.
+                </p>
+            </div>
+
+            <div>
+                <h4>
+                    <li>What are the disadvantages of using innerHTML in JavaScript?</li>
+                </h4>
+                <strong>Answere:</strong>
+                <p>The use of <b>innerHTML</b> very slow: The process of using innerHTML is much slower as its contents
+                    as slowly built, also already parsed contents and elements are also re-parsed which takes time.</p>
+                <p>Preserves event handlers attached to any DOM elements: The event handlers do not get attached to the
+                    new elements
+                    created by setting innerHTML automatically. To do so one has to keep track of the event handlers and
+                    attach it
+                    to new elements manually. This may cause a memory leak on some browsers.
+                </p>
+                <p>Content is replaced everywhere: Either you add, append, delete or modify contents on a webpage
+                    usinginnerHTML,
+                    all contents is replaced, also all the DOM nodes inside that element are reparsed andrecreated.</p>
+                <p>Appending to innerHTML is not supported: Usually, += is used for appending in JavaScript. But on
+                    appending to an Html tag using innerHTML, the whole tag is re-parsed.
+                    Example:</p>
+                <p> &lt;p id="xyz" >ABC &lt;/p> <br>
+                    title = document.getElementById('#xyz')</p>
+                <p>// The whole "ABC" tag is reparsed <br>
+                    title.innerHTML += '&lt;p> example &lt;/p>'</p>
+                <p><b> Old content replaced issue:</b> The old content is replaced even if object.innerHTML =
+                    object.innerHTML + ‘html’ is used instead of object.innerHTML += ‘html’. There is no way of
+                    appending without reparsing the whole innerHTML. Therefore, working with innerHTML becomes very
+                    slow. String concatenation just does not scale when dynamic DOM elements need to be created as the
+                    plus’ and quote openings and closings becomes difficult to track.</p>
+                <p><b> Can break the document:</b> There is no proper validation provided by innerHTML, so any valid
+                    HTML code can be used. This may break the document of JavaScript. Even broken HTML can be used,
+                    which may lead to unexpected problems.</p>
+                <p><b> Can also be used for Cross-site Scripting(XSS):</b> The fact that innerHTML can add text and
+                    elements to the webpage, can easily be used by malicious users to manipulate and display undesirable
+                    or harmful elements within other HTML element tags. Cross-site Scripting may also lead to loss, leak
+                    and change of sensitive information.
+                </p>
+            </div>
+
+
+        </ol>
+    </div>
+
+
+
+
+
+    <!--  -->
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
