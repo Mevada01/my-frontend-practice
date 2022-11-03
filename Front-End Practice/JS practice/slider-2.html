@@ -19,6 +19,14 @@
         <img class="slider-img" src="imgs/slider-card2.png" alt="">
         <img class="slider-img" src="imgs/slider-card3.png" alt="">
         <img class="slider-img" src="imgs/slider-card4.png" alt="">
+        <img class="slider-img" src="imgs/slider-card5.png" alt="">
+        <img class="slider-img" src="imgs/slider-card1.png" alt="">
+        <img class="slider-img" src="imgs/slider-card5.png" alt="">
+        <img class="slider-img" src="imgs/slider-card3.png" alt="">
+        <img class="slider-img" src="imgs/slider-card2.png" alt="">
+        <img class="slider-img" src="imgs/slider-card5.png" alt="">
+        <img class="slider-img" src="imgs/slider-card6.png" alt="">
+        <img class="slider-img" src="imgs/slider-card7.png" alt="">
     </div>
     <script>
         let sliderimgs=document.getElementsByClassName("slider-img")
@@ -30,10 +38,10 @@
         }
         sliderimgs[count].style.display="block"
         count++;
-        if(count >3){
+        if(count >=sliderimgs.length){
             count=0
         }
-        setTimeout(slider,3000);
+        setTimeout(slider,1000);
     }
     slider()
     </script>
