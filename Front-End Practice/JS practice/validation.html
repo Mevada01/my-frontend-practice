@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td>User Name</td>
+                <td>
+                    <input type="text" name="username" onblur="checkrequired(this,'unameError')" id="username" required>
+                    <!-- <span>*</span>  -->
+                    <span id="unameError">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="username" onblur="checkrequired(this,'upwdError')" id="password"required>
+                    <span id="upwdError">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Re-Password</td>
+                <td>
+                    <input type="password" name="username" onblur="checkrequired(this,'rpwdError')" id="password"required>
+                    <span id="rpwdError">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" name="username" onblur="checkrequired(this,'emailErrorr')" id="password"required>
+                    <span id="emailErrorr">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile No.</td>
+                <td>
+                    <input type="number " name="username" onblur="checkrequired(this,'mobileError')" id="password"required>
+                    <span id="mobileError">*</span>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" name="password" id="submit">
+    </form>
+    <script>
+        function checkrequired(e, spnid) {
+            // console.log(spnid);
+            // var uname = document.getElementById("username").value;
+            // var upwd = document.getElementById("password").value;
+            // console.log(uname);
+            // console.log(uname.value);
+            if (e.value == "") {
+                // document.getElementById("unameError").innerText = "<b>This field is required</b>";
+                document.getElementById(spnid).innerHTML = "<b>This field is required</b>";
+                // console.log("This Field is required");
+            } else {
+                document.getElementById(spnid).innerHTML = "";
+                // document.getElementById("upwdError").innerHTML = "";
+            }
+        }
+        // function checkpwdrequired() {
+        //     let upwd = document.getElementById("password").value;
+        //     // console.log(uname);
+        //     // console.log(uname.value);
+        //     if (upwd == "") {
+        //         // document.getElementById("unameError").innerText = "<b>This field is required</b>";
+        //         document.getElementById("upwdError").innerHTML = "<b>This field is required</b>";
+        //         // console.log("This Field is required");
+        //     }else{
+        //         document.getElementById("upwdError").innerHTML = "";
+        //     }
+        // }
+    </script>
+</body>
+
+</html>

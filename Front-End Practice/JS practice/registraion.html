@@ -1,0 +1,93 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <script src="val.js"></script>
+</head>
+
+<body>
+    <form method="post">
+        <table>
+            <caption>
+                Registration Form
+            </caption>
+            <tr>
+                <td>First Name</td>
+                <td><input id="txtfname" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input id="txtlname" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea rows="5" class="40" id="address"></textarea></td>
+            </tr>
+            <tr>
+                <td>Mobile Number</td>
+                <td><input id="txtmob" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Email Id</td>
+                <td><input id="txteid" type="text" /></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input id="txtpass1" type="password" /></td>
+            </tr>
+            <tr>
+                <td>Re-Enter Password</td>
+                <td><input id="txtpass2" type="password" /></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="Save" value="Save Data" onclick="return ValidateForm()" />
+                </td>
+                <td>
+                    <input type="reset" id="reset" value="Reset" />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script type="text/javascript">
+        function ValidateForm() {
+            var fnm = document.getElementById("txtfname");
+            var lnm = document.getElementById("txtlname");
+            var address = document.getElementById("address");
+            var con = document.getElementById("country");
+            var mob = document.getElementById("txtmob");
+            var eid = document.getElementById("txteid");
+            var p1 = document.getElementById("txtpass1");
+            var p2 = document.getElementById("txtpass2");
+            var errors = "";
+            if (fnm.value.length == 0) {
+                errors = errors + "\n Enter Your First Name";
+            }
+            if (lnm.value.length == 0) {
+                errors = errors + "\n Enter Your Last Name";
+            }
+            if (address.value.length == 0) {
+                errors = errors + "\n Enter Your Addres";
+            }
+            if (mob.value.length == 0) {
+                errors = errors + "\n Enter Your Mobile Number";
+            }
+            if (eid.value.length == 0) {
+                errors = errors + "\n Enter Your Email Id";
+            }
+            if (p1.value.length == 0) {
+                errors = errors + "\n Enter Your Enter Password";
+            }
+            if (errors != "") {
+                alert(errors);
+                return false;
+            }
+            else {
+                var letters = /^[A-Za-z]+$/;
+                var numbers = /^[0-9]+$/;
+                var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            }
+        }
+    </script>
+</body>
+
+</html>
