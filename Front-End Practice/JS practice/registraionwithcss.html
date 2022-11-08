@@ -26,7 +26,10 @@
             place-items: center;
             min-height: 100vh;
         }
-
+        span {
+            color: red;
+            font-family: 'Courier New', Courier, monospace;
+        }
         /* Global Stylings */
         label {
             display: block;
@@ -252,7 +255,7 @@
         </div> -->
             <div class="input-group">
                 <label for="phone">Phone</label>
-                <input type="tel" name="phone" placeholder="Phone" id="phone" onblur="checkrequired(this,'phnError')"
+                <input type="phone" name="phone" placeholder="Phone" id="phone" onblur="checkrequired(this,'phnError')"
                     required />
                 <i class="fas fa-check-circle"></i>
                 <i class="fas fa-exclamation-circle"></i>
@@ -365,7 +368,7 @@
                 formStep.classList.contains("form-step-active") &&
                     formStep.classList.remove("form-step-active");
             });
-                
+
             formSteps[formStepsNum].classList.add("form-step-active");
         }
 
