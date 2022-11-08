@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" required />
+    <script src="script.js" defer></script>
+    <script src="form.js" defer></script> -->
+    <style>
+        :root {
+            --primary-color: rgb(11, 78, 179);
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+        }
+
+        /* Global Stylings */
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 0.25rem;
+        }
+
+        .width-50 {
+            width: 50%;
+        }
+
+        .ml-auto {
+            margin-left: auto;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Progressbar */
+        .progressbar {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            counter-reset: step;
+            margin: 2rem 0 4rem;
+        }
+
+        .progressbar::before,
+        .progress {
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 4px;
+            width: 100%;
+            background-color: #dcdcdc;
+            z-index: -1;
+        }
+
+        .progress {
+            background-color: var(--primary-color);
+            width: 0%;
+            transition: 0.3s;
+        }
+
+        .progress-step {
+            width: 2.1875rem;
+            height: 2.1875rem;
+            background-color: #dcdcdc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .progress-step::before {
+            counter-increment: step;
+            content: counter(step);
+        }
+
+        .progress-step::after {
+            content: attr(data-title);
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        .progress-step-active {
+            background-color: var(--primary-color);
+            color: #f3f3f3;
+        }
+
+        /* Form */
+        .form {
+            width: clamp(320px, 30%, 430px);
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 0.35rem;
+            padding: 1.5rem;
+        }
+
+        .form-step {
+            display: none;
+            transform-origin: top;
+            animation: animate 0.5s;
+        }
+
+        .form-step-active {
+            display: block;
+        }
+
+        .input-group {
+            margin: 2rem 0;
+        }
+
+        .input-group.success input {
+            border-color: #2ecc71
+        }
+
+        .input-group.error input {
+            border-color: #e743c3
+        }
+
+
+        /* @keyframes animate {
+    from {
+      transform: scale(1, 0);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1, 1);
+      opacity: 1;
+    }
+  } */
+
+        .error {
+            display: block;
+            font-size: .8rem;
+            color: rgb(255, 41, 41);
+            margin: 5px 0;
+            text-transform: capitalize;
+            font-family: 'lato', sans-serif;
+            user-select: none;
+            opacity: 0;
+        }
+
+        .error.show {
+            opacity: 1;
+        }
+
+        /* Button */
+        .btns-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem;
+            display: block;
+            text-decoration: none;
+            background-color: var(--primary-color);
+            color: #f3f3f3;
+            text-align: center;
+            border-radius: 0.25rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color);
+        }
+    </style>
+    <title>Registraion Form</title>
+</head>
+
+<body>
+    <form action="#" class="form" method="post">
+        <h1 class="text-center">Your one contribution can change a life.</h1>
+        <!-- Progress bar -->
+        <div class="progressbar">
+            <div class="progress" id="progress"></div>
+
+            <div class="progress-step progress-step-active" data-title="Basic Info"></div>
+            <div class="progress-step" data-title="Contact"></div>
+            <div class="progress-step" data-title="Location"></div>
+            <!-- <div class="progress-step" data-title="Amount"></div> -->
+        </div>
+
+        <!-- Steps -->
+        <div class="form-step form-step-active">
+            <div class="input-group">
+                <label for="fullname">First Name</label>
+                <input type="text" name="fullname" placeholder="First Name" id="fullname"
+                    onblur="checkrequired(this,'unameError')" required />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="unameError">*</span>
+            </div>
+            <div class="input-group">
+                <label for="fullname">Last Name</label>
+                <input type="text" name="fullname" placeholder="Last Name" id="fullname"
+                    onblur="checkrequired(this,'lnameError')" required />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="lnameError">*</span>
+            </div>
+            <!-- <div class="input-group">
+          <label for="phone">Phone</label>
+          <input type="tel" name="phone" placeholder="Phone" id="phone" required />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error Message</small>
+        </div> -->
+            <div class="">
+                <a href="#" class="btn btn-next width-50 ml-auto">Next</a>
+            </div>
+        </div>
+        <div class="form-step">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" placeholder="Email" id="email"
+                    onblur="checkrequired(this,'emailError')" required />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="emailError">*</span>
+            </div>
+            <!-- <div class="input-group">
+          <label for="pannumber">PAN</label>
+          <input type="text" name="pannumber" placeholder="PAN" id="pannumber" required />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <small>Error Message</small>
+        </div> -->
+            <div class="input-group">
+                <label for="phone">Phone</label>
+                <input type="tel" name="phone" placeholder="Phone" id="phone" onblur="checkrequired(this,'addError')"
+                    required />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="phnError">*</span>
+            </div>
+            <div class="btns-group">
+                <a href="#" class="btn btn-prev">Previous</a>
+                <a href="#" class="btn btn-next">Next</a>
+            </div>
+        </div>
+        <div class="form-step">
+            <div class="input-group">
+                <label for="state">State</label>
+                <input type="text" name="state" placeholder="State" id="state" onblur="checkrequired(this,'stateError')"
+                    required />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="stateError">*</span>
+            </div>
+            <div class="input-group">
+                <label for="ID">City</label>
+                <input type="text" name="city" placeholder="City" id="city" onblur="checkrequired(this,'cityError')"
+                    required />
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <span id="cityError">*</span>
+            </div>
+            <div class="btns-group">
+                <a href="#" class="btn btn-prev">Previous</a>
+                <input type="submit" value="Submit" class="btn" required />
+            </div>
+        </div>
+        <!-- <div class="form-step">
+        <div class="input-group">
+          <label for="amount">Amount</label>
+          <input type="number" name="amount" placeholder="Amount" id="amount" required />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <span id="amtError">*</span>
+        </div>
+        <div class="input-group">
+          <label for="purpose">Purpose of Pay</label>
+          <input type="text" name="purpose" placeholder="Purpose" id="purpose"required />
+          <i class="fas fa-check-circle"></i>
+          <i class="fas fa-exclamation-circle"></i>
+          <span id="Error">*</span>
+        </div>
+        <div class="btns-group">
+          <a href="#" class="btn btn-prev">Previous</a>
+          <input type="submit" value="Submit" class="btn" required />
+        </div>
+      </div> -->
+    </form>
+    <script>
+        function checkrequired(e, spnid) {
+            console.log(spnid);
+            // var uname = document.getElementById("username").value;
+            // var upwd = document.getElementById("password").value;
+            // console.log(uname);
+            // console.log(uname.value);
+            if (e.value == "") {
+                // document.getElementById("unameError").innerText = "<b>This field is required</b>";
+                document.getElementById(spnid).innerHTML = "<b>This field is required</b>";
+                // console.log("This Field is required");
+            } else {
+                document.getElementById(spnid).innerHTML = "";
+                // document.getElementById("upwdError").innerHTML = "";
+            }
+        }
+
+
+        const prevBtns = document.querySelectorAll(".btn-prev");
+        const nextBtns = document.querySelectorAll(".btn-next");
+        const progress = document.getElementById("progress");
+        const formSteps = document.querySelectorAll(".form-step");
+        const progressSteps = document.querySelectorAll(".progress-step");
+
+        // Second Phase Code
+        const form = document.getElementById('form');
+        const fullname = document.getElementById('fullname');
+        const phone = document.getElementById('phone');
+        const email = document.getElementById('email');
+        const pannumber = document.getElementById('pannumber');
+        const state = document.getElementById('state');
+        const city = document.getElementById('city');
+        const amount = document.getElementById('amount');
+        const purpose = document.getElementById('purpose');
+
+        let formStepsNum = 0;
+
+        nextBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                formStepsNum++;
+                updateFormSteps();
+                updateProgressbar();
+                checkInputs();
+            });
+        });
+
+        prevBtns.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                formStepsNum--;
+                updateFormSteps();
+                updateProgressbar();
+            });
+        });
+
+        function updateFormSteps() {
+            formSteps.forEach((formStep) => {
+                formStep.classList.contains("form-step-active") &&
+                    formStep.classList.remove("form-step-active");
+            });
+
+            formSteps[formStepsNum].classList.add("form-step-active");
+        }
+
+        function updateProgressbar() {
+            progressSteps.forEach((progressStep, idx) => {
+                if (idx < formStepsNum + 1) {
+                    progressStep.classList.add("progress-step-active");
+                } else {
+                    progressStep.classList.remove("progress-step-active");
+                }
+            });
+
+            const progressActive = document.querySelectorAll(".progress-step-active");
+
+            progress.style.width =
+                ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
+        }
+
+        function checkInputs() {
+            // get the values from the buttons 
+            const fullnameValue = fullname.value.trim();
+            const phoneValue = phone.value.trim();
+            const emailValue = email.value.trim();
+            const pannumberValue = pannumber.value.trim();
+            const stateValue = state.value.trim();
+            const cityValue = city.value.trim();
+                // const amountValue = amount.value.trim();
+                // const purposeValue = purpose.value.trim();
+
+            if (fullnameValue === '') {
+                // Show error
+                // Add Error Class
+                setErrorFor(fullname, 'Fullname cannot be blank');
+            } else {
+                // Add Success Class
+                setSuccessFor(username);
+            }
+        }
+
+        function setErrorFor(input, message) {
+            const formControl = input.parentElement;
+        }
+    </script>
+</body>
+
+</html>

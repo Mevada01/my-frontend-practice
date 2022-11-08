@@ -52,12 +52,19 @@
                     <span id="mobileError">*</span>
                 </td>
             </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <input type="number " name="username" onblur="checkrequired(this,'addError')" id="password"required>
+                    <span id="addError">*</span>
+                </td>
+            </tr>
         </table>
         <input type="submit" name="password" id="submit">
     </form>
     <script>
         function checkrequired(e, spnid) {
-            // console.log(spnid);
+            console.log(spnid);
             // var uname = document.getElementById("username").value;
             // var upwd = document.getElementById("password").value;
             // console.log(uname);

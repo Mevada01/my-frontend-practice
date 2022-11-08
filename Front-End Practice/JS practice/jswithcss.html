@@ -6,20 +6,15 @@
             document.getElementById("id1").style.backgroundColor = '#000';
             document.getElementById("id1").style.color = '#FFF';
         } function ChangeColor2() {
-            document.getElementById("id1").style.backgroundColor = '#fcba03';
-            document.getElementById("id1").style.color = '#42f5d7';
-        }
-         function ChangeColor3() {
-            document.getElementById("id1").style.backgroundColor = '#FFF';
-            document.getElementById("id1").style.color = '##42f5d7';
+            document.getElementById("id1").style.backgroundColor = 'violet';
+            document.getElementById("id1").style.color = '#000';
         }
     </script>
 </head>
 
 <body>
-    <div id="id1" onmouseover="ChangeColor1()" onmouseout="ChangeColor2()" onmousein="ChangeColor3()">
-        <center>this is my text of this div.</center>
-    </div>
+    <div id="id1" onmouseover="ChangeColor1()" onmouseout="ChangeColor2()">
+        <span>this is my text of this div.</span>
 </body>
 
 </html>
