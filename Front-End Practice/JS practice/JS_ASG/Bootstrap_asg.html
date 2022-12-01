@@ -1,0 +1,59 @@
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Difference between dates in days</title>
+	<link href=
+"https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+		rel="stylesheet">
+	<script src=
+"https://code.jquery.com/jquery-1.10.2.js">
+	</script>
+	<script src=
+"https://code.jquery.com/ui/1.10.4/jquery-ui.js">
+	</script>
+	<script>
+		$(function() {
+			$("#date1").datepicker();
+			var date1 = $("#date1")
+		});
+		$(function() {
+			$("#date2").datepicker();
+			var date2 = $("#date2")
+		});
+	
+		function func() {
+			date1 = new Date(date1.value);
+			date2 = new Date(date2.value);
+			var milli_secs = date1.getTime() - date2.getTime();
+			
+			// Convert the milli seconds to Days
+			var days = milli_secs / (1000 * 3600 * 24);
+			document.getElementById("ans").innerHTML =
+			Math.round(Math.abs(days));
+		}
+	</script>
+</head>
+
+<body>
+	<!-- <h1>GeeksforGeeks</h1> -->
+	<h3>Calculating the difference between the 2 dates</h3>
+	
+<p>Enter Date 1 :
+		<input type="text" id="date1">
+	</p>
+
+
+	
+<p>Enter Date 2 :
+		<input type="text" id="date2">
+	</p>
+
+
+	<button id="sub"
+			onclick="func()"
+			type="button"> Submit
+	</button>
+	<h3 id="ans">Difference in days</h3>
+</body>
+</html>
