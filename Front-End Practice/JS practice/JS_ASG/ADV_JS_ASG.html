@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://rawcdn.githack.com/SochavaAG/example-mycode/master/_common/css/reset.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://rawcdn.githack.com/SochavaAG/example-mycode/master/_common/css/reset.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Toggle Password Visibility</title>
+<style>
+    form i {
+        margin-left: -30px;
+        cursor: pointer;
+    }
+
+    h1 {
+        color: red;
+    }
+
+    .sidebar-open {
+        overflow: hidden;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+    }
+
+    .sidebar-open .overlay {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .header {
+        padding: 30px 0;
+        background-color: #311432;
+        box-shadow: 3px 3px 3px #ccc;
+        z-index: 99;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .logo {
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: 700;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .row-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-list {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-list li {
+        padding: 0 10px;
+    }
+
+    .nav-list li a {
+        color: #ffffff;
+        font-size: 18px;
+        text-decoration: none;
+        padding: 10px 0;
+        position: relative;
+        display: block;
+    }
+
+    .nav-list li a::after {
+        content: "";
+        background-color: #ffffff;
+        width: 0;
+        height: 2px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: all 0.3s linear;
+    }
+
+    .nav-list li a:hover::after {
+        width: 100%;
+    }
+
+    .nav-list li.active a::after {
+        width: 100%;
+    }
+
+    .nav-list li.with-submenu {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-list li.with-submenu>a {
+        margin-right: 10px;
+    }
+
+    .nav-list li.with-submenu::after {
+        content: "";
+        border-bottom: 2px solid #fff;
+        border-right: 2px solid #fff;
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        transform: rotate(45deg);
+        right: 0;
+        margin-bottom: 5px;
+        transition: all 0.3s;
+    }
+
+    .nav-list li.with-submenu:hover::after {
+        transform: rotate(225deg);
+        margin-top: 10px;
+    }
+
+    .nav-list li.with-submenu .submenu {
+        position: absolute;
+        left: 50%;
+        top: 100%;
+        background: #ffffff;
+        border-radius: 10px;
+        transform: translateX(-50%);
+        box-shadow: 2px 2px 1px 2px #ccc;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .nav-list li.with-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-list li.with-submenu .submenu li {
+        padding: 0;
+    }
+
+    .nav-list li.with-submenu .submenu a {
+        color: #000000;
+        display: block;
+        padding: 8px 15px;
+        transition: all 0.3s;
+    }
+
+    .nav-list li.with-submenu .submenu a:hover {
+        background-color: rgba(49, 20, 50, 0.3);
+    }
+
+    .nav-list li.with-submenu .submenu a::after {
+        display: none;
+    }
+
+    .nav-list li.with-submenu>a {
+        position: relative;
+        z-index: 1;
+    }
+
+    .hamburger {
+        display: none;
+        z-index: 99;
+    }
+
+    .hamburger .line {
+        width: 25px;
+        height: 1.5px;
+        background-color: #ffffff;
+        display: block;
+        margin: 5px 0;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger .line:nth-child(2) {
+        width: 15px;
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
+    }
+
+    .hamburger.is-active .line {
+        background-color: #311432;
+    }
+
+    .hamburger.is-active .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .line:nth-child(1) {
+        -webkit-transform: translateY(6.5px) rotate(45deg);
+        -ms-transform: translateY(6.5px) rotate(45deg);
+        -o-transform: translateY(6.5px) rotate(45deg);
+        transform: translateY(6.5px) rotate(45deg);
+    }
+
+    .hamburger.is-active .line:nth-child(3) {
+        -webkit-transform: translateY(-6.5px) rotate(-45deg);
+        -ms-transform: translateY(-6.5px) rotate(-45deg);
+        -o-transform: translateY(-6.5px) rotate(-45deg);
+        transform: translateY(-6.5px) rotate(-45deg);
+    }
+
+    @media (max-width: 767px) {
+        .header {
+            padding: 10px 0;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .nav-wrap {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            transform: translateX(100%);
+            background-color: #ffffff;
+            transition: all 0.5s linear;
+            max-width: 300px;
+            width: 100%;
+            height: 100%;
+            box-shadow: 2px -5px 5px 3px #ccc;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 0;
+        }
+
+        .nav-wrap.is-open {
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+            right: 0;
+            z-index: 9;
+        }
+
+        .nav-list {
+            flex-direction: column;
+            align-items: unset;
+            opacity: 0;
+            visibility: hidden;
+            transition-delay: 0.5s;
+            transition-duration: 1s;
+            transition-property: all;
+            padding: 10px;
+        }
+
+        .nav-wrap.is-open .nav-list {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .nav-list li {
+            padding: 7px 10px;
+        }
+
+        .nav-list li a {
+            color: #311432;
+            text-align: left;
+            display: inline-block;
+            padding: 2px 0;
+        }
+
+        .nav-list li a::after {
+            background-color: #311432;
+        }
+
+        .nav-list li.with-submenu {
+            display: block;
+        }
+
+        .nav-list li.with-submenu::after {
+            border-color: #311432;
+            right: 10px;
+            top: 12px;
+        }
+
+        .nav-list li.with-submenu:hover::after {
+            transform: rotate(45deg);
+            margin-top: 0;
+        }
+
+        .nav-list li.with-submenu.is-open::after {
+            transform: rotate(225deg);
+            margin-top: 5px;
+        }
+
+        .nav-list li.with-submenu .submenu {
+            position: static;
+            transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
+            box-shadow: none;
+            border-radius: 0;
+            border-top: 1px solid #ccc;
+            display: none;
+            transition: auto;
+            margin: 10px 0;
+        }
+
+        .nav-list li.with-submenu .submenu li {
+            padding: 7px 10px;
+        }
+
+        .nav-list li.with-submenu .submenu li:hover a {
+            background-color: transparent;
+        }
+
+        .nav-list li.with-submenu .submenu li a {
+            display: inline-block;
+            padding: 2px 0;
+        }
+
+        .nav-list li.with-submenu .submenu li a::after {
+            display: block;
+        }
+    }
+
+    span {
+        color: red;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        /* Stay in place */
+        z-index: 1;
+        /* Sit on top */
+        padding-top: 100px;
+        /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%;
+        /* Full width */
+        height: 100%;
+        /* Full height */
+        overflow: auto;
+        /* Enable scroll if needed */
+        background-color: rgb(0, 0, 0);
+        /* Fallback color */
+        background-color: rgba(0, 0, 0, 0.4);
+        /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
+
+    /* The Close Button */
+    .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .ag-format-container {
+        width: 1142px;
+        margin: 0 auto;
+    }
+
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .layout {
+        width: 600px;
+        margin: 10px auto;
+        position: relative;
+    }
+
+    .layout a {
+        color: #666;
+    }
+
+    .slide {
+        display: none;
+    }
+
+    .slide li {
+        list-style: none;
+    }
+
+    .slide.slick-initialized {
+        display: block;
+    }
+
+    .slick-dots {
+        margin-top: 5px;
+        margin-left: -5px;
+        margin-right: -5px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .slick-dots li {
+        display: inline-block;
+        max-height: 56px;
+        max-width: 112px;
+        margin: 5px;
+    }
+
+    .slick-dots li img {
+        height: auto;
+        width: 100%;
+
+        cursor: pointer;
+
+        opacity: 0.5;
+    }
+
+    .slick-dots li.slick-active img {
+        cursor: default;
+
+        opacity: 1;
+    }
+
+    .slick-prev,
+    .slick-next {
+        margin: -50px 0 0;
+
+        z-index: 99;
+        position: absolute;
+        top: 50%;
+    }
+
+    .slick-prev {
+        left: -50px;
+    }
+
+    .slick-next {
+        right: -50px;
+    }
+
+    .icon {
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+    }
+
+    .icon__cnt {
+        height: 100%;
+        width: 100%;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .ag-format-container {
+            width: 96%;
+        }
+
+    }
+
+    @media only screen and (max-width: 639px) {}
+
+    @media only screen and (max-width: 479px) {}
+
+    @media (min-width: 768px) and (max-width: 979px) {
+        .ag-format-container {
+            width: 750px;
+        }
+
+    }
+
+    @media (min-width: 980px) and (max-width: 1161px) {
+        .ag-format-container {
+            width: 960px;
+        }
+
+    }
+</style>
+
+<body>
+    Module 1
+</body>
+
+<body>
+
+    <!-- <h2>The Window Object</h2> -->
+    <h2>The alert() Method</h2>
+
+    <p>Click the button to display an alert box.</p>
+
+    <button onclick="myFunction()">Try it</button>
+
+    <script>
+        function myFunction() {
+            alert("Hello! I am an alert box!");
+        }
+    </script>
+
+
+</body>
+
+<body>
+    <script>
+        "use strict";
+        if ("0") {
+            alert('Hello This Ans for Module 1 Q.2 Then Alert is show for Module 1 Q.3');
+        }
+    </script>
+</body>
+
+<body>
+    <script>
+        function checkAge(age) {
+            return (age > 18) ? true : confirm('Did parents allow you?');
+        }
+        function checkAge(age) {
+            return (age > 18) || confirm('Did parents allow you?');
+        }
+    </script>
+</body>
+
+<body>
+
+    <script>
+        "use strict";
+
+        function ask(question, yes, no) {
+            if (confirm(question)) yes();
+            else no();
+        }
+
+        ask(
+            "Do you agree?",
+            () => alert("You agreed."),
+            () => alert("You canceled the execution.")
+        );
+    </script>
+</body>
+<!-------------------------------------------- module 3 ----------------------------- -->
+
+<body>
+    <h1>Module 3 </h1>
+</body>
+
+<body>
+    <h2>Module </h2>
+    <div class="container">
+        <h1>Sign In</h1>
+        <form method="post">
+            <p>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+            </p>
+            <p>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" />
+                <i class="bi bi-eye-slash" id="togglePassword"></i>
+            </p>
+            <button type="submit" id="submit" class="submit">Log In</button>
+        </form>
+    </div>
+    <script>
+        const togglePassword = document.querySelector("#togglePassword");
+        const password = document.querySelector("#password");
+
+        togglePassword.addEventListener("click", function () {
+            // toggle the type attribute
+            const type = password.getAttribute("type") === "password" ? "text" : "password";
+            password.setAttribute("type", type);
+
+            // toggle the icon
+            this.classList.toggle("bi-eye");
+        });
+
+        // prevent form submit
+        const form = document.querySelector("form");
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+        });
+    </script>
+    <br><br>
+    <br><br>
+    <br><br>
+</body>
+
+<body>
+
+    <body>
+        <div id="buttonsContainer"></div>
+        <script>
+            const buttonsContainer = document.getElementById("buttonsContainer");
+
+            for (var i = 0; i < 5; i++) {
+                const button = document.createElement("button");
+                button.innerText = i;
+                button.addEventListener("click", function () {
+                    console.log(i)
+                })
+                buttonsContainer.appendChild(button);
+            }
+
+        </script>
+    </body>
+
+</body>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <div class="row-wrap">
+                <div class="logo-wrap">
+                    <span class="logo">LOGO</span>
+                </div>
+                <div class="nav-wrap">
+                    <ul class="nav-list">
+                        <li class="active"><a href="#">About-us</a></li>
+                        <li><a href="#">Contact-us</a></li>
+                        <li class="with-submenu">
+                            <a href="#">Blog</a>
+                            <div class="submenu">
+                                <ul class="submenu-inner">
+                                    <li><a href="#">Link1</a></li>
+                                    <li><a href="#">Link2</a></li>
+                                    <li><a href="#">Link3</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="overlay"></div>
+    <script>
+        function header_adj() {
+            if ($(window).width() < 767) {
+                var header_height = $(".header").outerHeight();
+                $(".nav-wrap .nav-list").css({ "padding-top": header_height + "px" });
+            } else {
+                $(".nav-wrap .nav-list").css({ "padding-top": "0" });
+            }
+        }
+        function submenu_toggle() {
+            if ($(window).width() < 767) {
+                $(".nav-list li.with-submenu")
+                    .off()
+                    .click(function () {
+                        $(this).toggleClass("is-open");
+                        $(".submenu").slideToggle("slow");
+                    });
+            }
+        }
+        $(document).ready(function () {
+            header_adj();
+            submenu_toggle();
+            if ($(window).width() < 767) {
+                $(".hamburger").click(function () {
+                    $(this).toggleClass("is-active");
+                    $("body,html").toggleClass("sidebar-open");
+                    $(".nav-wrap").toggleClass("is-open");
+                });
+
+                $(".overlay").click(function () {
+                    $(".hamburger").removeClass("is-active");
+                    $("body,html").removeClass("sidebar-open");
+                    $(".nav-wrap").removeClass("is-open");
+                });
+            } else {
+                $(".hamburger").removeClass("is-active");
+                $("body,html").removeClass("sidebar-open");
+                $(".nav-wrap").removeClass("is-open");
+            }
+        });
+        $(window).on("resize", function () {
+            header_adj();
+            submenu_toggle();
+            if ($(window).width() < 767) {
+                $(".hamburger").click(function () {
+                    $(this).toggleClass("is-active");
+                    $("body,html").toggleClass("sidebar-open");
+                    $(".nav-wrap").toggleClass("is-open");
+                });
+
+                $(".overlay").click(function () {
+                    $(".hamburger").removeClass("is-active");
+                    $("body,html").removeClass("sidebar-open");
+                    $(".nav-wrap").removeClass("is-open");
+                });
+            } else {
+                $(".hamburger").removeClass("is-active");
+                $("body,html").removeClass("sidebar-open");
+                $(".nav-wrap").removeClass("is-open");
+            }
+        });
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+
+
+
+<br><br>
+
+<body>
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td>User Name</td>
+                <td>
+                    <input type="text" name="username" onblur="checkrequired(this,'unameError')" id="username" required>
+                    <!-- <span>*</span>  -->
+                    <span id="unameError">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" name="username" onblur="checkrequired(this,'upwdError')" id="password"
+                        required>
+                    <span id="upwdError">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Re-Password</td>
+                <td>
+                    <input type="password" name="username" onblur="checkrequired(this,'rpwdError')" id="password"
+                        required>
+                    <span id="rpwdError">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <input type="email" name="username" onblur="checkrequired(this,'emailErrorr')" id="password"
+                        required>
+                    <span id="emailErrorr">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile No.</td>
+                <td>
+                    <input type="number " name="username" onblur="checkrequired(this,'mobileError')" id="password"
+                        required>
+                    <span id="mobileError">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>
+                    <input type="number " name="username" onblur="checkrequired(this,'addError')" id="password"
+                        required>
+                    <span id="addError">*</span>
+                </td>
+            </tr>
+        </table>
+        <input type="submit" name="password" id="submit">
+    </form>
+    <script>
+        function checkrequired(e, spnid) {
+            console.log(spnid);
+            // var uname = document.getElementById("username").value;
+            // var upwd = document.getElementById("password").value;
+            // console.log(uname);
+            // console.log(uname.value);
+            if (e.value == "") {
+                // document.getElementById("unameError").innerText = "<b>This field is required</b>";
+                document.getElementById(spnid).innerHTML = "<b>This field is required</b>";
+                // console.log("This Field is required");
+            } else {
+                document.getElementById(spnid).innerHTML = "";
+                // document.getElementById("upwdError").innerHTML = "";
+            }
+        }
+        // function checkpwdrequired() {
+        //     let upwd = document.getElementById("password").value;
+        //     // console.log(uname);
+        //     // console.log(uname.value);
+        //     if (upwd == "") {
+        //         // document.getElementById("unameError").innerText = "<b>This field is required</b>";
+        //         document.getElementById("upwdError").innerHTML = "<b>This field is required</b>";
+        //         // console.log("This Field is required");
+        //     }else{
+        //         document.getElementById("upwdError").innerHTML = "";
+        //     }
+        // }
+    </script>
+</body>
+
+<br><br>
+
+<body>
+
+    <h2>Modal Example</h2>
+
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+
+
+<br><br><br>
+
+<body>
+    <div class="ag-format-container">
+        <div class="layout">
+            <ul class="slider">
+                <li>
+                    <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/img-1098x549-15.jpg"
+                        alt="" />
+                </li>
+                <li>
+                    <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/img-1098x549-5.jpg"
+                        alt="" />
+                </li>
+                <li>
+                    <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/img-1098x549-1.jpg"
+                        alt="" />
+                </li>
+                <li>
+                    <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/img-1098x549-10.jpg"
+                        alt="" />
+                </li>
+                <li>
+                    <img src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_images/img-1098x549-4.jpg"
+                        alt="" />
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+        <symbol id="ei-arrow-left-icon" viewBox="0 0 50 50">
+            <path
+                d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z">
+            </path>
+            <path d="M25.3 34.7L15.6 25l9.7-9.7 1.4 1.4-8.3 8.3 8.3 8.3z"></path>
+            <path d="M17 24h17v2H17z"></path>
+        </symbol>
+
+        <symbol id="ei-arrow-right-icon" viewBox="0 0 50 50">
+            <path
+                d="M25 42c-9.4 0-17-7.6-17-17S15.6 8 25 8s17 7.6 17 17-7.6 17-17 17zm0-32c-8.3 0-15 6.7-15 15s6.7 15 15 15 15-6.7 15-15-6.7-15-15-15z">
+            </path>
+            <path d="M24.7 34.7l-1.4-1.4 8.3-8.3-8.3-8.3 1.4-1.4 9.7 9.7z"></path>
+            <path d="M16 24h17v2H16z"></path>
+        </symbol>
+    </svg>
+    <script>
+            (function ($) {
+                $(function () {
+
+
+                    $('.slider').slick({
+                        dots: true,
+                        prevArrow: '<a class="slick-prev slick-arrow" href="#" style=""><div class="icon icon--ei-arrow-left"><svg class="icon__cnt"><use xlink:href="#ei-arrow-left-icon"></use></svg></div></a>',
+                        nextArrow: '<a class="slick-next slick-arrow" href="#" style=""><div class="icon icon--ei-arrow-right"><svg class="icon__cnt"><use xlink:href="#ei-arrow-right-icon"></use></svg></div></a>',
+                        customPaging: function (slick, index) {
+                            var targetImage = slick.$slides.eq(index).find('img').attr('src');
+                            return '<img src=" ' + targetImage + ' "/>';
+                        }
+                    });
+
+
+                });
+            })(jQuery);
+    </script>
+</body>
+
+
+
+</html>
