@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Pacifico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.js">
+    <title>Document</title>
+    <style>
+        /* ----------------------------------
+  Nothing relevant here, 
+  just making the pen prettier
+-----------------------------------*/
+        body {
+            margin: 0 auto;
+            background: #3498db;
+            font-family: 'Pacifico';
+            color: #fff;
+        }
+
+        h1 {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .slider {
+            border: 1px solid #f00;
+        }
+
+        .slick-slide {
+            padding-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .slick-slide {
+                margin-right: 20px;
+            }
+        }
+
+        article {
+            box-shadow: 0 15px 20px -10px rgba(0, 0, 0, 0.4);
+            background: #ffe044;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #3498db;
+            font-size: 22px;
+        }
+
+        pre {
+            font-family: 'Cutive Mono';
+            background: rgba(255, 255, 255, 0.133);
+            padding: 30px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container pt-5">
+        <div id="app">
+            <h1 class="text-center mb-5">Slick Slider + VueJS</h1>
+            <!-- Input-->
+            <form @submit.prevent="addItem(newItem)">
+                <div class="input-group mb-4">
+                    <input class="form-control" v-model="newItem" placeholder="Add element" />
+                    <div class="input-group-append">
+                        <button class="btn btn-success" type="submit">Add</button>
+                    </div>
+                </div>
+            </form>
+            <!-- Slider component-->
+            <slider class="mb-5" v-once="v-once" :slides="words"></slider>
+            <!-- Array output-->
+            <pre>Array log:
+                [
+                "Tizio",
+                "Caio",
+                "Franco",
+                "Sempronio"
+              ]
+  {{ words }}</pre>
+        </div>
+    </div>
+    <script>console.clear();
+
+        /*--------------------------------------
+          Slider component
+        --------------------------------------*/
+        Vue.component("slider", {
+            template: `
+            <div>
+              <div v-for="slide in slides"> 
+                <article> {{ slide }} </article>
+              </div>
+            </div>
+          `,
+            props: ["slides"],
+            data() {
+                return {
+                    sliderOptions: {
+                        dots: true,
+                        arrows: false,
+                        mobileFirst: true,
+                        infinite: false,
+                        responsive: [
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    arrows: true,
+                                    slidesToShow: 3
+                                }
+                            }]
+                    }
+                };
+
+
+
+
+
+            },
+            methods: {
+                initSlider() {
+                    $(this.$el).slick(this.sliderOptions);
+                },
+                destroySlider() {
+                    $(this.$el).slick("unslick");
+                }
+            },
+
+            mounted() {
+                this.initSlider();
+            },
+            watch: {
+                slides() {
+                    this.destroySlider();
+                    Vue.nextTick(() => {
+                        this.initSlider();
+                    });
+                }
+            }
+        });
+
+
+
+        /*--------------------------------------
+          App
+        --------------------------------------*/
+        const app = new Vue({
+            el: "#app",
+            data: {
+                words: ["Tizio", "Caio", "Franco", "Sempronio"],
+                newItem: ""
+            },
+
+            methods: {
+                addItem(item) {
+                    this.words.unshift(item);
+                    this.newItem = "";
+                }
+            }
+        });</script>
+</body>
+
+</html>
