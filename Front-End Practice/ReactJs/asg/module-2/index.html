@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700|Droid+Serif:400,400italic,700'">
+    <style>
+        @charset "UTF-8";
+
+        *,
+        *:before,
+        *:after {
+            -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #f4f4f4;
+        }
+
+        #wrapper:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+
+        head {
+            display: block;
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            z-index: 999;
+            color: #333;
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        head:before {
+            content: "|||";
+            display: block;
+            padding: 5px 10px;
+            font-family: sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        head:hover {
+            background: rgba(255, 255, 255, 0.5);
+            color: red;
+        }
+
+        head:hover~#wrapper,
+        head:hover~body #wrapper {
+            position: relative;
+        }
+
+        head:hover~#wrapper:before,
+        head:hover~body #wrapper:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            content: " ";
+            z-index: 998;
+            background-image: linear-gradient(to right, rgba(102, 102, 255, 0.25), rgba(179, 179, 255, 0.25) 80%, transparent 80%);
+            background-size: 6.3291139241%;
+            background-origin: content-box;
+            background-clip: content-box;
+            background-position: left top;
+        }
+
+        #content {
+            width: 74.6835443038%;
+            float: left;
+            margin-right: 1.2658227848%;
+            float: left;
+            margin-left: 12.6582278481%;
+            margin-right: -100%;
+            background-color: #f4f4f4;
+        }
+
+        @media only screen and (max-width: 43em) {
+            #content {
+                width: 100%;
+                float: left;
+                margin-left: 0;
+                margin-right: 0;
+                float: left;
+                margin-left: 0;
+                margin-right: -100%;
+            }
+        }
+
+        main[role=main] {
+            padding: 20px;
+        }
+
+        .inner-footer {
+            width: 74.6835443038%;
+            float: left;
+            margin-right: 1.2658227848%;
+            float: left;
+            margin-left: 12.6582278481%;
+            margin-right: -100%;
+            float: none;
+        }
+
+        @media only screen and (max-width: 43em) {
+            .inner-footer {
+                width: 100%;
+                float: left;
+                margin-left: 0;
+                margin-right: 0;
+                float: left;
+                margin-left: 0;
+                margin-right: -100%;
+            }
+        }
+
+        .header {
+            padding: 20px 20px 0;
+        }
+
+        .header h1 a {
+            display: block;
+            background: url(http://i66.tinypic.com/24mc1mt.jpg) 0 0 no-repeat;
+            width: 100px;
+            height: 48px;
+            text-indent: -1000px;
+        }
+
+        .footer {
+            clear: both;
+            background-color: #999999;
+        }
+
+        .footer .inner-footer {
+            font-family: "Droid Sans", serif;
+            font-size: 0.75em;
+            color: #fff;
+            padding: 20px;
+        }
+
+        body {
+            font-family: "Droid Serif", serif;
+            font-size: 100%;
+        }
+
+        h2 {
+            font-size: 1.875em;
+            font-weight: bold;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        .fa-trash-o {
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #000066;
+        }
+
+        .fa-plus,
+        .fa-minus {
+            font-size: 0.6em;
+            color: #fff;
+            padding: 5px;
+            background-color: #999;
+        }
+
+        button.buy-now {
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            padding: 10px;
+            background-color: #000066;
+            color: #fff;
+            font-family: "Droid Sans", sans-serif;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 490px) {
+            button.buy-now {
+                font-size: 0.7em;
+            }
+        }
+
+        @media only screen and (min-width: 490px) and (max-width: 860px) {
+            button.buy-now {
+                font-size: 0.8em;
+            }
+        }
+
+        @media only screen and (min-width: 860px) and (max-width: 1200px) {
+            button.buy-now {
+                font-size: 1.2em;
+            }
+        }
+
+        table.basket-tbl,
+        table.result-tbl {
+            width: 100%;
+            margin-top: 40px;
+        }
+
+        table.basket-tbl tr:nth-child(even),
+        table.result-tbl tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        table.basket-tbl tr:nth-child(even) input,
+        table.result-tbl tr:nth-child(even) input {
+            background-color: #dddddd;
+        }
+
+        table.basket-tbl tr.tbl-foot,
+        table.result-tbl tr.tbl-foot {
+            background-color: #f4f4f4 !important;
+        }
+
+        table.basket-tbl tr.tbl-foot input,
+        table.result-tbl tr.tbl-foot input {
+            background-color: #f4f4f4;
+        }
+
+        table.basket-tbl th,
+        table.result-tbl th {
+            border-bottom: 2px solid #000000;
+            padding: 10px 10px 0;
+            text-align: left;
+            width: 20%;
+        }
+
+        table.basket-tbl th:first-child,
+        table.result-tbl th:first-child {
+            width: 35%;
+        }
+
+        table.basket-tbl th:last-child,
+        table.result-tbl th:last-child {
+            width: 5%;
+            background-color: #f4f4f4;
+            border-bottom: none;
+        }
+
+        table.basket-tbl td,
+        table.result-tbl td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        table.basket-tbl td:last-child,
+        table.result-tbl td:last-child {
+            background-color: #f4f4f4;
+        }
+
+        table.basket-tbl td input,
+        table.result-tbl td input {
+            width: 80%;
+            float: left;
+            background-color: #f4f4f4;
+            border: none;
+        }
+
+        table.basket-tbl td input.qty,
+        table.result-tbl td input.qty {
+            width: 30%;
+            background-color: #ffffff;
+            border: 1px solid #999999;
+            height: 42px;
+            margin-right: 2%;
+            float: left;
+            text-align: right;
+            padding-right: 5px;
+        }
+
+        table.basket-tbl .outer-button,
+        table.result-tbl .outer-button {
+            width: 68%;
+            float: right;
+            margin-top: -2px;
+        }
+
+        table.basket-tbl .currency:before,
+        table.result-tbl .currency:before {
+            content: "£";
+            float: left;
+            margin-top: 1px;
+        }
+
+        table.result-tbl tr:nth-child(3) {
+            font-weight: bold;
+        }
+
+        table.result-tbl tr td:first-child {
+            width: 75%;
+        }
+
+        /* ------- Responsive Table --------- */
+        @media only screen and (max-width: 43em) {
+            table.basket-tbl {
+                margin-top: 0;
+                font-size: 0.8em;
+            }
+
+            table.basket-tbl .outer-button {
+                margin-top: 0;
+            }
+
+            table.result-tbl {
+                margin-top: 0;
+            }
+
+            table.basket-tbl thead {
+                display: none;
+            }
+
+            table.display th,
+            table.display td {
+                padding: 0.5em;
+            }
+
+            table.basket-tbl td:nth-child(1):before {
+                content: "Product";
+            }
+
+            table.basket-tbl td:nth-child(2):before {
+                content: "Price";
+            }
+
+            table.basket-tbl td:nth-child(3):before {
+                content: "Qty";
+            }
+
+            table.basket-tbl td:nth-child(4):before {
+                content: "Cost";
+            }
+
+            table.basket-tbl td:nth-child(5):before {
+                content: "Remove";
+            }
+
+            table.basket-tbl td:nth-child(1),
+            table.basket-tbl td:nth-child(2),
+            table.basket-tbl td:nth-child(5) {
+                padding-left: 25%;
+                width: auto;
+                height: 45px;
+            }
+
+            table.basket-tbl td:nth-child(3),
+            table.basket-tbl td:nth-child(4) {
+                padding-left: 25%;
+                width: auto;
+                height: 65px;
+            }
+
+            table.basket-tbl td:nth-child(1):before,
+            table.basket-tbl td:nth-child(2):before,
+            table.basket-tbl td:nth-child(3):before,
+            table.basket-tbl td:nth-child(4):before,
+            table.basket-tbl td:nth-child(5):before {
+                position: absolute;
+                left: 0.5em;
+                font-weight: bold;
+            }
+
+            table.basket-tbl tr,
+            table.basket-tbl td {
+                display: block;
+            }
+
+            table.basket-tbl tr {
+                position: relative;
+                margin-bottom: 1em;
+                border: 1px solid #999999;
+            }
+
+            table.basket-tbl td {
+                border-top: none;
+            }
+
+            table.basket-tbl td.product {
+                background: #999999;
+                border-top: 1px solid #B3BFAA;
+            }
+
+            table.basket-tbl td:nth-child(5) {
+                border-top: 1px solid #999999;
+            }
+
+            table.basket-tbl tr:nth-child(even) td:nth-child(5) {
+                background-color: #dddddd;
+            }
+
+            table.basket-tbl td:nth-child(5):before {
+                font-weight: normal;
+            }
+
+            .fa-trash-o {
+                position: absolute;
+                right: 20px;
+            }
+        }
+
+        @media only screen and (min-width: 320px) and (max-width: 460px) {
+            table.result-tbl tr td:first-child {
+                width: 55%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div id="wrapper">
+        <div id="content">
+            <header class="header">
+                <h1><a href="/">AKQA</a></h1>
+                <h2>Your Basket</h2>
+                <p>Items you have added to your basket are shown below.
+                    <br> Adjust the quantitites or remove items before continuing your purchase.
+                </p>
+            </header>
+            <main role="main">
+                <form id="subtotal-form" name="subtotal-form" method="post" action="">
+                    <table class="basket-tbl">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Qty</th>
+                                <th>Cost</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="product">
+                                    <label>Cotton T-Shirt, Medium</label>
+                                </td>
+                                <td>
+                                    <div class="currency">
+                                        <input type="text" name="price" id="price" class="price" value="1.99">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="qty">
+                                        <input type="text" name="qty" id="qty" class="qty" value="1">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="currency">
+                                        <input type="text" name="cost" id="cost" class="cost" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <i class="fa fa-trash-o"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product">
+                                    <label>Baseball Cap, one Size</label>
+                                </td>
+                                <td>
+                                    <div class="currency">
+                                        <input type="text" name="price" id="price" class="price" value="2.99">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="qty">
+                                        <input type="text" name="qty" id="qty" class="qty" value="2">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="currency">
+                                        <input type="text" name="cost" id="cost" class="cost" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <i class="fa fa-trash-o"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product">
+                                    <label>Swim Shorts, Medium</label>
+                                </td>
+                                <td>
+                                    <div class="currency">
+                                        <input type="text" name="price" id="price" class="price" value="3.99">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="qty">
+                                        <input type="text" name="qty" class="qty" id="qty" value="1">
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="currency">
+                                        <input type="text" name="cost" class="cost" id="cost" value="">
+                                    </div>
+                                </td>
+                                <td>
+                                    <i class="fa fa-trash-o"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <table class="result-tbl">
+                        <tbody>
+                            <tr class="tbl-foot">
+                                <td colspan="3">
+                                    <label>Subtotal</label>
+                                </td>
+                                <td>
+                                    <div class="currency">
+                                        <input type="text" name="subtotal" class="subtotal" id="subtotal" value="">
+                                    </div>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr class="tbl-foot">
+                                <td colspan="3">
+                                    <label>VAT @ 20%</label>
+                                </td>
+                                <td class="currency">
+                                    <input type="text" name="vat" class="vat" id="vat" value="">
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr class="tbl-foot">
+                                <td colspan="3">
+                                    <label>Total Cost</label>
+                                </td>
+                                <td>
+                                    <div class="currency">
+                                        <input type="text" name="total" class="total" id="total" value="">
+                                    </div>
+                                </td>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr class="tbl-foot">
+                                <td>&nbsp;</td>
+                                <td colspan="4">
+                                    <button type="submit" id="buy-now" class="buy-now">Buy Now <i
+                                            class="fa fa-angle-double-right"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </main>
+        </div>
+        <footer class="footer">
+            <div class="inner-footer">
+                &copy; <strong>2013 AKQA Ltd.</strong> Registered in England: 2964394
+            </div>
+        </footer>
+    </div>
+
+
+    <section style="margin:100px 0; ">
+        <h2>What is JavaScript Output method?</h2>
+        <p>JavaScript can "display" data in different ways: Writing into an HTML element, using innerHTML . Writing into
+            the HTML output using document.write() . Writing into an alert box, using window.alert() . Writing into the
+            browser console, using console.log() .</p>
+    </section>
+    <section style="margin:100px 0; ">
+        <h2>How to used JavaScript Output method?</h2>
+        <p>About 25,50,00,000 results (0.44 seconds)
+            JavaScript Output
+            <ol>
+            <li>Writing into an HTML element, using innerHTML .</li>
+            <li>Writing into the HTML output using document.write() .</li>
+            <li>Writing into an alert box, using window.alert() .</li>
+            <li>Writing into the browser console, using console.log() .</li></ol></p>
+    </section>
+    <section style="margin:100px 0; ">
+        <h2>How to used JavaScript Events to do all examples?</h2>
+        <p>Common Event Listeners
+            <ol>
+                <li>Onload: When your page loads, it performs accordingly.</li>
+                <li>Onclick: When a user clicks on a button or inputs it occurs.</li>
+                <li>Onmouseover: When a user mouses over on the button.</li>
+                <li>Onfocus: Certain scenarios when a user keeps the cursor in a form field.</li>
+                <li>Onblur: If a particular form field leaves within it.</li>
+            </ol></p>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <script>
+        $(function () {
+
+            $("form div.qty").append('<div class="outer-button"><div class="inc button"><i class="fa fa-plus"></i></div><div class="dec button"><i class="fa fa-minus"></i></div></div>');
+
+            calculate();
+
+            $(".button").on("click", function () {
+
+                var $button = $(this);
+                var oldQty = $button.parent().parent().find("input").val();
+
+                if ($button.html() == '<i class="fa fa-plus"></i>') {
+                    var newQty = parseFloat(oldQty) + 1;
+                } else {
+                    // Don't allow decrementing less than zero
+                    if (oldQty > 0) {
+                        var newQty = parseFloat(oldQty) - 1;
+                    } else {
+                        newQty = 0;
+                    }
+                }
+
+                $button.parent().parent().find("input").val(newQty);
+                calculate();
+            });
+
+            function calculate() {
+                $(".basket-tbl tr").each(function () {
+                    var priceVal = $(this).find('input.price').val();
+                    var qtyVal = $(this).find("input.qty").val();
+                    var costVal = (priceVal * qtyVal);
+                    $(this).find('input.cost').val((costVal).toFixed(2));
+                });
+
+                var subtotalVal = 0;
+                $('.cost').each(function () {
+                    subtotalVal += parseFloat($(this).val());
+                });
+                $('.subtotal').val((subtotalVal).toFixed(2));
+
+                $(".vat").val(((subtotalVal / 100) * 20).toFixed(2));
+
+                var vatVal = ((subtotalVal / 100) * 20).toFixed(2);
+                var total = parseFloat(subtotalVal) + parseFloat(vatVal);
+                $(".total").val((total).toFixed(2));
+            }
+
+
+            $(".fa-trash-o").click(function () {
+                $(this).parent().parent().remove();
+                calculate();
+            });
+
+
+            // $("#subtotal-form").submit(function(e) {
+
+            //     var url = "";
+
+            //     $.ajax({
+            //            type: "POST",
+            //            url: url,
+            //            data: $("#subtotal-form").serializeArray(),
+            //            success: function(data)
+            //            {
+            //                alert("All done!");
+            //            }
+            //          });
+
+            //     e.preventDefault();
+            // });
+
+            var cart = new Cart();
+
+            $("#subtotal-form").submit(function (e) {
+                e.preventDefault();
+                cart.recalculate();
+                $.ajax({
+                    type: $(e.currentTarget).attr('method'),
+                    url: $(e.currentTarget).attr('action'),
+                    dataType: 'json',
+                    data: JSON.stringify(cart.data),
+                    success: function () {
+                        alert(JSON.stringify(cart.data));
+                        console.log(cart.data);
+                    },
+                    error: function () {
+                        alert(JSON.stringify(cart.data));
+                        console.log(cart.data);
+                    }
+                });
+            });
+
+        });
+    </script>
+</body>
+
+</html>
