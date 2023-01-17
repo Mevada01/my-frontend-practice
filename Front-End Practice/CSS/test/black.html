@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: white;
+        }
+
+        .slider {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width:
+                500px;
+            height: 60px;
+            padding: 30px;
+            padding-left: 40px;
+            background: #fcfcfc;
+            border-radius: 20px;
+            display: flex;
+            align-items:
+                center;
+            box-shadow: 0px 15px 40px #7E6D5766;
+        }
+
+        .slider label {
+            font-size: 24px;
+            font-weight: 400;
+            font-family: Open Sans;
+            padding-left: 10px;
+            color: black;
+        }
+
+        .slider input[type="range"] {
+            width: 420px;
+            height: 2px;
+            background: black;
+            border:
+                none;
+            outline: none;
+        }
+
+        .range input {
+            margin-top: 10%;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
+            -o-transform: rotate(90deg);
+            transform: rotate(270deg);
+        }
+
+        body,
+        html {
+            background-color: #1d1c25;
+            margin: 0;
+            padding: 0;
+        }
+
+        .range {
+            -webkit-appearance: none;
+            -moz-appearance:
+                none;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 200px;
+            margin-top: 10px;
+            transform: translate(-50%,
+                    -50%);
+        }
+
+        input[type=range]::-webkit-slider-runnable-track {
+            -webkit-appearance: none;
+            background:
+                rgba(59, 173, 227, 1);
+            background: -moz-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%,
+                    rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            background: -webkit-gradient(left bottom, right top, color-stop(0%,
+                        rgba(59, 173, 227, 1)), color-stop(25%, rgba(87, 111, 230, 1)), color-stop(51%, rgba(152, 68, 183, 1)), color-stop(100%,
+                        rgba(255, 53, 127, 1)));
+            background: -webkit-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%,
+                    rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            background: -o-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%,
+                    rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            background: -ms-linear-gradient(45deg,
+                    rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            background:
+                linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3bade3 ', endColorstr='#ff357f ',
+                    GradientType=1);
+            height: 2px;
+        }
+
+        input[type=range]:focus {
+            outline: none;
+        }
+
+        input[type=range]::-moz-range-track {
+            -moz-appearance: none;
+            background: rgba(59, 173, 227, 1);
+            background: -moz-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%,
+                    rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            background: -webkit-gradient(left bottom,
+                    right top, color-stop(0%, rgba(59, 173, 227, 1)), color-stop(25%, rgba(87, 111, 230, 1)), color-stop(51%, rgba(152, 68, 183, 1)),
+                    color-stop(100%, rgba(255, 53, 127, 1)));
+            background: -webkit-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%,
+                    rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            background: -o-linear-gradient(45deg,
+                    rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            background:
+                -ms-linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%, rgba(255, 53, 127, 1) 100%);
+            background: linear-gradient(45deg, rgba(59, 173, 227, 1) 0%, rgba(87, 111, 230, 1) 25%, rgba(152, 68, 183, 1) 51%,
+                    rgba(255, 53, 127, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3bade3 ',
+                    endColorstr='#ff357f ', GradientType=1);
+            height: 2px;
+        }
+
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance:
+                none;
+            border: 2px solid;
+            border-radius: 50%;
+            height: 25px;
+            width: 25px;
+            max-width: 80px;
+            position: relative;
+            bottom:
+                11px;
+            background-color: #1d1c25;
+            cursor: -webkit-grab;
+            -webkit-transition: border 1000ms ease;
+            transition: border 1000ms ease;
+        }
+
+        input[type=range]::-moz-range-thumb {
+            -moz-appearance: none;
+            border: 2px solid;
+            border-radius: 50%;
+            height:
+                25px;
+            width: 25px;
+            max-width: 80px;
+            position: relative;
+            bottom: 11px;
+            background-color: #1d1c25;
+            cursor:
+                -moz-grab;
+            -moz-transition: border 1000ms ease;
+            transition: border 1000ms ease;
+        }
+
+        .range.blue::-webkit-slider-thumb {
+            border-color: rgb(59, 173, 227);
+        }
+
+        .range.ltpurple::-webkit-slider-thumb {
+            border-color:
+                rgb(87, 111, 230);
+        }
+
+        .range.purple::-webkit-slider-thumb {
+            border-color:
+                rgb(152, 68, 183);
+        }
+
+        .range.pink::-webkit-slider-thumb {
+            border-color: rgb(255, 53, 127);
+        }
+
+        .range.blue::-moz-range-thumb {
+            border-color:
+                rgb(59, 173, 227);
+        }
+
+        .range.ltpurple::-moz-range-thumb {
+            border-color: rgb(87, 111, 230);
+        }
+
+        .range.purple::-moz-range-thumb {
+            border-color: rgb(152, 68, 183);
+        }
+
+        .range.pink::-moz-range-thumb {
+            border-color:
+                rgb(255, 53, 127);
+        }
+
+        input[type=range]::-webkit-slider-thumb:active {
+            cursor:
+                -webkit-grabbing;
+        }
+
+        input[type=range]::-moz-range-thumb:active {
+            cursor: -moz-grabbing;
+        }
+
+        /* Resources1× 0.5× 0.25×Rerun  */
+    </style>
+</head>
+
+<body>
+
+    // how to create a sldier in html?
+    <!--DELIMITER-->To begin, paste the following code into your coding environment of choice. For quick results,
+    CodePen is
+    a great option. The results show a basic slider that can adjust from 0 to 200.
+    <div class="slider"><input type="range" min="0" max="200" value="100" oninput="rangeValue.innerText = this.value">
+        <p id="rangeValue">100</p>
+    </div>
+
+    <!--DELIMITER-->As you can see, a very basic slider can be created with only HTML. However, we may want to add a
+    more
+    positive visual impression to enhance the user's experience. This can be done by pasting the following CSS code to
+    your
+    coding environment. The results will display a colored range slider with a border around it.
+    body {background: linear-gradient(to right, red, yellow);}.slider {position: absolute;top: 50%;left: 50%;transform:
+    translate(-50%,-50%);width: 500px;height: 60px;padding: 30px;padding-left: 40px;background: #fcfcfc;border-radius:
+    20px;display: flex;align-items: center;box-shadow: 0px 15px 40px #7E6D5766;}.slider p {font-size: 26px;font-weight:
+    600;font-family: Open Sans;padding-left: 30px;color: black;}.slider input[type="range"] {-webkit-appearance:none
+    !important;width: 420px;height: 2px;background: black;border: none;outline: none;}.slider
+    input[type="range"]::-webkit-slider-thumb {-webkit-appearance: none !important;width: 30px;height:30px;background:
+    black;border: 2px solid black;border-radius: 50%;cursor: pointer;}.slider
+    input[type="range"]::-webkit-slider-thumb:hover {background: black;}
+
+    <!--DELIMITER-->HTML:
+    <div class="slider"><label for="fader">Volume </label><input type="range" min="0" max="100" value="50" id="fader"
+            step="20" list="volsettings"><datalist id="volsettings">
+            <option>0</option>
+            <option>20</option>
+            <option>40</option>
+            <option>60</option>
+            <option>80</option>
+            <option>100</option>
+        </datalist></div>
+
+    <!--DELIMITER-->CSS:
+    <!-- body {background: white);}.slider {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width:
+    500px;height: 60px;padding: 30px;padding-left: 40px;background: #fcfcfc;border-radius: 20px;display:
+    flex;align-items:
+    center;box-shadow: 0px 15px 40px #7E6D5766;}.slider label {font-size: 24px;font-weight: 400;font-family: Open
+    Sans;padding-left: 10px;color: black;}.slider input[type="range"] {width: 420px;height: 2px;background:
+    black;border:
+    none;outline: none;} -->
+
+    <!--DELIMITER-->HTML:
+    <div class="range"><input type="range" value="25" min="0" max="50" oninput="rangeValue.innerText = this.value">
+        <p id="rangeValue">25</p>
+    </div>
+
+    <!--DELIMITER-->CSS:
+    <!-- .range input
+    {margin-top:10%;-webkit-transform:rotate(90deg);-moz-transform:rotate(90deg);-o-transform:rotate(90deg);transform:rotate(270deg);}; -->
+
+    <!--DELIMITER-->HTML:
+    <input type="range" min="-100" max="0" value="0" class="range blue" />
+
+    <!--DELIMITER-->CSS:
+    <!-- body, html {background-color: #1d1c25;margin: 0;padding: 0;}.range {-webkit-appearance: none;-moz-appearance:
+    none;position: absolute;left: 50%;top: 50%;width: 200px;margin-top: 10px;transform: translate(-50%,
+    -50%);}input[type=range]::-webkit-slider-runnable-track {-webkit-appearance: none;background:
+    rgba(59,173,227,1);background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%,
+    rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);background: -webkit-gradient(left bottom, right top, color-stop(0%,
+    rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)), color-stop(100%,
+    rgba(255,53,127,1)));background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%,
+    rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);background: -o-linear-gradient(45deg, rgba(59,173,227,1) 0%,
+    rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);background: -ms-linear-gradient(45deg,
+    rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);background:
+    linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1)
+    100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ', endColorstr='#ff357f ',
+    GradientType=1 );height: 2px;}input[type=range]:focus {outline: none;}input[type=range]::-moz-range-track
+    {-moz-appearance: none;background: rgba(59,173,227,1);background: -moz-linear-gradient(45deg, rgba(59,173,227,1) 0%,
+    rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);background: -webkit-gradient(left bottom,
+    right
+    top, color-stop(0%, rgba(59,173,227,1)), color-stop(25%, rgba(87,111,230,1)), color-stop(51%, rgba(152,68,183,1)),
+    color-stop(100%, rgba(255,53,127,1)));background: -webkit-linear-gradient(45deg, rgba(59,173,227,1) 0%,
+    rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);background: -o-linear-gradient(45deg,
+    rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1) 100%);background:
+    -ms-linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%, rgba(255,53,127,1)
+    100%);background: linear-gradient(45deg, rgba(59,173,227,1) 0%, rgba(87,111,230,1) 25%, rgba(152,68,183,1) 51%,
+    rgba(255,53,127,1) 100%);filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3bade3 ',
+    endColorstr='#ff357f ', GradientType=1 );height: 2px;}input[type=range]::-webkit-slider-thumb {-webkit-appearance:
+    none;border: 2px solid;border-radius: 50%;height: 25px;width: 25px;max-width: 80px;position: relative;bottom:
+    11px;background-color: #1d1c25;cursor: -webkit-grab;-webkit-transition: border 1000ms ease;transition: border 1000ms
+    ease;}input[type=range]::-moz-range-thumb {-moz-appearance: none;border: 2px solid;border-radius: 50%;height:
+    25px;width: 25px;max-width: 80px;position: relative;bottom: 11px;background-color: #1d1c25;cursor:
+    -moz-grab;-moz-transition: border 1000ms ease;transition: border 1000ms ease;}.range.blue::-webkit-slider-thumb
+    {border-color: rgb(59,173,227);}.range.ltpurple::-webkit-slider-thumb {border-color:
+    rgb(87,111,230);}.range.purple::-webkit-slider-thumb {border-color:
+    rgb(152,68,183);}.range.pink::-webkit-slider-thumb
+    {border-color: rgb(255,53,127);}.range.blue::-moz-range-thumb {border-color:
+    rgb(59,173,227);}.range.ltpurple::-moz-range-thumb {border-color: rgb(87,111,230);}.range.purple::-moz-range-thumb
+    {border-color: rgb(152,68,183);}.range.pink::-moz-range-thumb {border-color:
+    rgb(255,53,127);}input[type=range]::-webkit-slider-thumb:active {cursor:
+    -webkit-grabbing;}input[type=range]::-moz-range-thumb:active {cursor: -moz-grabbing;}Resources1× 0.5× 0.25×Rerun -->
+</body>
+
+</html>
