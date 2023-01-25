@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
+    <style>
+        .slick-list {
+	max-width: 700px;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+.slick-list .slick-slide {
+	font-size: 30px;
+	text-align: center;
+	padding: 40px 20px;
+	line-height: 2;
+	font-weight: 700;
+}
+.slick-list .slick-slide:nth-child(even) {
+	background-color: #ddd;
+}
+.slick-list .slick-slide:nth-child(odd) {
+	background-color: #ccc;
+}
+.slick-arrow {
+	z-index: 1;
+	width: 40px;
+	height: 40px;
+}
+
+.slick-arrow:before {
+	font-size: 30px;
+}
+.slick-next {
+	right: 0;
+}
+.slick-prev {
+	left: 0;
+}
+
+.btn-wrap {
+	text-align: center;
+	width: 100%;
+}
+button {
+	background-color: #ddd;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 5px;
+	margin: 10px;
+	font-size: 18px;
+	font-weight: 600;
+	transition: all 0.5s;
+}
+button.slick-disabled {
+	opacity: 0.6;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="slick-list">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+    </div>
+    <div class="btn-wrap">
+        <button class="prev-btn">Previous</button>
+        <button class="next-btn">Next</button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+	$(".slick-list").slick({
+		slidesToShow: 4,
+		slidesToScroll: 1,
+		arrows: true,
+		infinite: false,
+		autoplay: false
+	});
+	$(".prev-btn").click(function () {
+		$(".slick-list").slick("slickPrev");
+	});
+
+	$(".next-btn").click(function () {
+		$(".slick-list").slick("slickNext");
+	});
+	$(".prev-btn").addClass("slick-disabled");
+	$(".slick-list").on("afterChange", function () {
+		if ($(".slick-prev").hasClass("slick-disabled")) {
+			$(".prev-btn").addClass("slick-disabled");
+		} else {
+			$(".prev-btn").removeClass("slick-disabled");
+		}
+		if ($(".slick-next").hasClass("slick-disabled")) {
+			$(".next-btn").addClass("slick-disabled");
+		} else {
+			$(".next-btn").removeClass("slick-disabled");
+		}
+	});
+});
+
+    </script>
+</body>
+
+</html>
